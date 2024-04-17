@@ -4,7 +4,7 @@ Quick facts and user documentations for NLLDS (Neurolanglab Data System).
 
 Author: Wu Yidu
 
-Last updated on April 16, 2024 by Yidu
+Last updated on April 17, 2024 by Yidu
 
 ## Overview
 
@@ -14,10 +14,8 @@ The NLLDS is used for project management, experiment data collection and storage
 
 Here are some quick facts for your reference.
 
-- `Web Address`: http://137.189.158.12/NLLDS/login
-- `Administrators`
-  - Feng Gangyi, g.feng@cuhk.edu.hk
-  - Wu Yidu, yiduwu@cuhk.edu.hk
+- `Web Address`: [http://137.189.158.12/NLLDS/login](http://137.189.158.12/NLLDS/login)
+- `Administrators`: Feng Gangyi [(g.feng@cuhk.edu.hk)](mailto:g.feng@cuhk.edu.hk); Wu Yidu [(yiduwu@cuhk.edu.hk)](mailto:yiduwu@cuhk.edu.hk)
 
 ## Web Interface
 
@@ -79,4 +77,87 @@ Here are descriptions of these fields:
 
 ### Survey
 
-Click on the `Survey` navigation in the sidebar, then you will come to the Survey System, which was modified and deployed by the open source project `LimeSurvey`. So you can refer to the official documentation (https://manual.limesurvey.org/LimeSurvey_Manual) for detailed instructions on using this system. You don't need to pay much attention to configuration-related content, as I've already set it up for our usage scenarios, but rather just focus on the questionnaire design and publishing module. Compared to googleform, it supports more comprehensive questionnaire forms and features, and the data can be localized. I will make some special instructions below.
+Click on the `Survey` navigation in the sidebar, then you will come to the Survey System, which was modified and deployed by the open source project `LimeSurvey`. So you can refer to the official documentation [(https://manual.limesurvey.org/LimeSurvey_Manual)](https://manual.limesurvey.org/LimeSurvey_Manual) for detailed instructions on using this system. You don't need to pay much attention to configuration-related content, as I've already set it up for our usage scenarios, but rather just focus on the questionnaire design and publishing module. Compared to googleform, it supports more comprehensive questionnaire forms and features, and the data can be localized. I will make some special instructions below.
+
+Since the Survey system is independent, you will also need to perform a login operation, with the same account password as you used to log into the NLLDS system.
+
+![](img/survey_1.png)
+
+After successful login, you will come to the main interface, which contains navigation of some main functions, focusing on `Create survey` and `List surveys` pages.
+
+![](img/survey_2.png)
+
+In `List surveys` page, you can view and manage all surveys here. Remember `Survey ID`? We show it on the `Project` page, and it's the ID that allows the project to be associated with the survey. 
+
+![](img/survey_3.png)
+
+So how we can associate them? We need to set up the `Survey alias` same as our project name and then our system will automatically associate with it. If something wrong, the `Survey_ID` shows in the `Project` page will display `Not Found`.
+
+![](img/survey_4.png)
+
+Once everything done, you can find the Survey URL here, also you can click the `Survey_ID` shows in the `Project` page, which use the same link.
+
+![](img/survey_5.png)
+
+We'd better switch the Survey to `closed-access` mode, i.e., Survey participants need to get a pre-assigned access code to access the Survey, and we can assign `SubjectNo` to each participant as their access code.
+
+![](img/survey_6.png)
+
+![](img/survey_7.png)
+
+Fill in the `SubjectNo` assigned to each participant here.
+
+![](img/survey_8.png)
+
+After that, each participant will need to fill in the access code (`SubjectNo`) to access their Survey.
+
+![](img/survey_9.png)
+
+After the survey participant fills in the correct access code and submits their survey, you can view the survey content of each subject in the `Subject` page of NLLDS, and you can also click it to view the detail page; if the subject has not submit the survey or the access code was assigned incorrectly, it will display `Not Found`.
+
+![](img/survey_10.png)
+
+![](img/survey_11.png)
+
+**Please publish the survey after it is fully designed and tested. Do not stop the survey easily after it has published, otherwise all survey data will be archived in the history table and feedback cannot be viewed in real time.**
+
+### FTPServer
+
+The `FTPServer` navigation in the sidebar is only visible to administrators. When click it you will jump to the root path of file system, which means you can view and manage all project files in our system. If you are not an administrator, you do not have this permission. You can only access each subject directory individually in the `Subject` page.
+
+In `Subject` page, clicking the link under `TaskFile` field will jump to the `Behavior` directory of this subject, where you can upload Behavior data here. And click the `view` button under NeuroFile will jump to the `Neuroimaging` directory of this subject, where you can upload Neuroimaging file here.
+
+![](img/subject_2.png)
+
+![](img/filesys_1.png)
+
+![](img/filesys_2.png)
+
+Here are some features of our file system:
+
+- `Toolbar`: Including some main features like `New folder`, `New file`, `Upload files`, `Download`, `Delete`, `Preview`, etc. 
+- `Columns`: Shows some important information about the file and supports sorting.
+- `Context menu`: Some of these are similar to the toolbar functionality, with additional support for the `Rename`, `Copy`, `Cut`, `Edit`, `Archive`, etc.
+- `Info`: show some file overview information.
+
+![](img/filesys_3.png)
+
+Please know that we support drag and drop uploading of files, and please do not close the current page while uploading files until the upload is successful.
+
+![](img/filesys_4.png)
+
+Please be careful when making any deletion operations. We will prompt you with a second confirmation.
+
+![](img/filesys_5.png)
+
+## Important Notice
+
+- The process of uploading files may be slow due to our server has I/O and network bandwidth limitations, please be patient. It is not recommended to open multiple windows for uploading as it may occupy other people's network bandwidth.
+- File uploads and downloads may need to comply with cross-boundary data flow agreements. Please do not upload any sensitive information.
+- This system is for internal use only, please do not disclose any website information or personal accounts to non-affiliated parties.
+- Any errors or problems found please contact the administrator [(yiduwu@cuhk.edu.hk)](mailto:yiduwu@cuhk.edu.hk) for assistance.
+
+## Useful Resources
+
+- NLLDS source code: [https://github.com/witten-wu/NLLDS](https://github.com/witten-wu/NLLDS)
+- LimeSurvey document: [https://manual.limesurvey.org/LimeSurvey_Manual](https://manual.limesurvey.org/LimeSurvey_Manual)
