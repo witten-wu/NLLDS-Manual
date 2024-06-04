@@ -3,22 +3,22 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
-      <link rel="shortcut icon" href="img/favicon.ico" />
-    <title>NLLDS-Manual</title>
-    <link rel="stylesheet" href="css/theme.css" />
-    <link rel="stylesheet" href="css/theme_extra.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>NLLDS - NLLDS-Manual</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
         var mkdocs_page_name = "NLLDS";
-        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_input_path = "GPU.md";
         var mkdocs_page_url = null;
       </script>
     
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
+      <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
       <script>hljs.highlightAll();</script> 
@@ -30,17 +30,21 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href="." class="icon icon-home"> NLLDS-Manual
+          <a href=".." class="icon icon-home"> NLLDS-Manual
         </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">NLLDS</a>
+                </li>
+              </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href=".">NLLDS</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">NLLDS</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
     </li>
@@ -67,10 +71,6 @@
     </ul>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="GPU/">NLLDS</a>
-                </li>
-              </ul>
       </div>
     </div>
     </nav>
@@ -78,13 +78,13 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href=".">NLLDS-Manual</a>
+          <a href="..">NLLDS-Manual</a>
         
       </nav>
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
       <li class="breadcrumb-item active">NLLDS</li>
     <li class="wy-breadcrumbs-aside">
     </li>
@@ -110,7 +110,7 @@
 <p>In this section, I will introduce some useful features in our website.</p>
 <h3 id="login">Login</h3>
 <p>When you access the web address by your browser (recommand chrome, edge, firefox), you will be directed to the login page. Type your username and password (distributed by administrators), and click <code>Login</code> button to login.</p>
-<p><img alt="" src="img/login.png" /></p>
+<p><img alt="" src="../img/login.png" /></p>
 <h3 id="project">Project</h3>
 <p>If successful you will see the project page. You will see your projects here (Only if the project is managed by you or you are one of the collaborators), you cannot view other projects which are not relevant to you.</p>
 <p>The <code>Add Project</code> button is only visible to administrators, which means you are not authorized to create projects. When creating a project, administrators need to fill in the project name, project description (not necessary), and assign managers and collaborators.</p>
@@ -125,7 +125,7 @@
 <li><code>Created_By</code>: Record who created the project.</li>
 <li><code>Created_date</code>: Project create date.</li>
 </ul>
-<p><img alt="" src="img/project_1.png" /></p>
+<p><img alt="" src="../img/project_1.png" /></p>
 <h3 id="subject">Subject</h3>
 <p>If you click the project name or double-click this project item, you will jump to the subpage which lists all the subject information of this project.</p>
 <p>Click <code>Add Subject</code> button then you can add subjects for this project. The system will automatically generate the latest <code>Subject No.</code> in a specific format. Although we allow modifications, in most cases please use the system-generated <code>Subject No.</code> directly! Please note that <code>Subject No.</code> does not allow duplicates.</p>
@@ -136,7 +136,7 @@
 <li><code>TaskFile</code>: Lists all the tasks of this project and supports clicking to jump to the file system to view this subject's task data. Each task corresponds to a <code>Behavior</code> file. Will be mentioned again later.</li>
 <li><code>NeuroFile</code>: Supports clicking to jump to the file system to view this subject's <code>Neuroimaging</code> data.</li>
 </ul>
-<p><img alt="" src="img/subject_1.png" /></p>
+<p><img alt="" src="../img/subject_1.png" /></p>
 <h3 id="task">Task</h3>
 <p>Click on the <code>Task</code> navigation in the sidebar, then you will come to this page to <code>Add Task</code> for each projects. The tasks lists here will be the tasks for all the projects that are relevant to you. And you can only add tasks for these projects, with support for deletion. After added, you'll see the <code>TaskFile</code> synchronization updated in the <code>Subject</code> page.</p>
 <p>Here are descriptions of these fields:</p>
@@ -147,36 +147,36 @@
 <li><code>Created_By</code>: Record who created the task.</li>
 <li><code>Created_date</code>: Task create date.</li>
 </ul>
-<p><img alt="" src="img/task_1.png" /></p>
+<p><img alt="" src="../img/task_1.png" /></p>
 <h3 id="survey">Survey</h3>
 <p>Click on the <code>Survey</code> navigation in the sidebar, then you will come to the Survey System, which was modified and deployed by the open source project <code>LimeSurvey</code>. So you can refer to the official documentation <a href="https://manual.limesurvey.org/LimeSurvey_Manual">(https://manual.limesurvey.org/LimeSurvey_Manual)</a> for detailed instructions on using this system. You don't need to pay much attention to configuration-related content, as I've already set it up for our usage scenarios, but rather just focus on the questionnaire design and publishing module. Compared to googleform, it supports more comprehensive questionnaire forms and features, and the data can be localized. I will make some special instructions below.</p>
 <p>Since the Survey system is independent, you will also need to perform a login operation, with the same account password as you used to log into the NLLDS system.</p>
-<p><img alt="" src="img/survey_1.png" /></p>
+<p><img alt="" src="../img/survey_1.png" /></p>
 <p>After successful login, you will come to the main interface, which contains navigation of some main functions, focusing on <code>Create survey</code> and <code>List surveys</code> pages.</p>
-<p><img alt="" src="img/survey_2.png" /></p>
+<p><img alt="" src="../img/survey_2.png" /></p>
 <p>In <code>List surveys</code> page, you can view and manage all surveys here. Remember <code>Survey ID</code>? We show it on the <code>Project</code> page, and it's the ID that allows the project to be associated with the survey. </p>
-<p><img alt="" src="img/survey_3.png" /></p>
+<p><img alt="" src="../img/survey_3.png" /></p>
 <p>So how we can associate them? We need to set up the <code>Survey alias</code> same as our project name and then our system will automatically associate with it. If something wrong, the <code>Survey_ID</code> shows in the <code>Project</code> page will display <code>Not Found</code>.</p>
-<p><img alt="" src="img/survey_4.png" /></p>
+<p><img alt="" src="../img/survey_4.png" /></p>
 <p>Once everything done, you can find the Survey URL here, also you can click the <code>Survey_ID</code> shows in the <code>Project</code> page, which use the same link.</p>
-<p><img alt="" src="img/survey_5.png" /></p>
+<p><img alt="" src="../img/survey_5.png" /></p>
 <p>We'd better switch the Survey to <code>closed-access</code> mode, i.e., Survey participants need to get a pre-assigned access code to access the Survey, and we can assign <code>SubjectNo</code> to each participant as their access code.</p>
-<p><img alt="" src="img/survey_6.png" /></p>
-<p><img alt="" src="img/survey_7.png" /></p>
+<p><img alt="" src="../img/survey_6.png" /></p>
+<p><img alt="" src="../img/survey_7.png" /></p>
 <p>Fill in the <code>SubjectNo</code> assigned to each participant here.</p>
-<p><img alt="" src="img/survey_8.png" /></p>
+<p><img alt="" src="../img/survey_8.png" /></p>
 <p>After that, each participant will need to fill in the access code (<code>SubjectNo</code>) to access their Survey.</p>
-<p><img alt="" src="img/survey_9.png" /></p>
+<p><img alt="" src="../img/survey_9.png" /></p>
 <p>After the survey participant fills in the correct access code and submits their survey, you can view the survey content of each subject in the <code>Subject</code> page of NLLDS, and you can also click it to view the detail page; if the subject has not submit the survey or the access code was assigned incorrectly, it will display <code>Not Found</code>.</p>
-<p><img alt="" src="img/survey_10.png" /></p>
-<p><img alt="" src="img/survey_11.png" /></p>
+<p><img alt="" src="../img/survey_10.png" /></p>
+<p><img alt="" src="../img/survey_11.png" /></p>
 <p><strong>Please publish the survey after it is fully designed and tested. Do not stop the survey easily after it has published, otherwise all survey data will be archived in the history table and feedback cannot be viewed in real time.</strong></p>
 <h3 id="ftpserver">FTPServer</h3>
 <p>The <code>FTPServer</code> navigation in the sidebar is only visible to administrators. When click it you will jump to the root path of file system, which means you can view and manage all project files in our system. If you are not an administrator, you do not have this permission. You can only access each subject directory individually in the <code>Subject</code> page.</p>
 <p>In <code>Subject</code> page, clicking the link under <code>TaskFile</code> field will jump to the <code>Behavior</code> directory of this subject, where you can upload Behavior data here. And click the <code>view</code> button under NeuroFile will jump to the <code>Neuroimaging</code> directory of this subject, where you can upload Neuroimaging file here.</p>
-<p><img alt="" src="img/subject_2.png" /></p>
-<p><img alt="" src="img/filesys_1.png" /></p>
-<p><img alt="" src="img/filesys_2.png" /></p>
+<p><img alt="" src="../img/subject_2.png" /></p>
+<p><img alt="" src="../img/filesys_1.png" /></p>
+<p><img alt="" src="../img/filesys_2.png" /></p>
 <p>Here are some features of our file system:</p>
 <ul>
 <li><code>Toolbar</code>: Including some main features like <code>New folder</code>, <code>New file</code>, <code>Upload files</code>, <code>Download</code>, <code>Delete</code>, <code>Preview</code>, etc. </li>
@@ -184,11 +184,11 @@
 <li><code>Context menu</code>: Some of these are similar to the toolbar functionality, with additional support for the <code>Rename</code>, <code>Copy</code>, <code>Cut</code>, <code>Edit</code>, <code>Archive</code>, etc.</li>
 <li><code>Info</code>: show some file overview information.</li>
 </ul>
-<p><img alt="" src="img/filesys_3.png" /></p>
+<p><img alt="" src="../img/filesys_3.png" /></p>
 <p>Please know that we support drag and drop uploading of files, and please do not close the current page while uploading files until the upload is successful.</p>
-<p><img alt="" src="img/filesys_4.png" /></p>
+<p><img alt="" src="../img/filesys_4.png" /></p>
 <p>Please be careful when making any deletion operations. We will prompt you with a second confirmation.</p>
-<p><img alt="" src="img/filesys_5.png" /></p>
+<p><img alt="" src="../img/filesys_5.png" /></p>
 <h2 id="important-notice">Important Notice</h2>
 <ul>
 <li>The process of uploading files may be slow due to our server has I/O and network bandwidth limitations, please be patient. It is not recommended to open multiple windows for uploading as it may occupy other people's network bandwidth.</li>
@@ -205,7 +205,7 @@
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="GPU/" class="btn btn-neutral float-right" title="NLLDS">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href=".." class="btn btn-neutral float-left" title="NLLDS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -228,16 +228,16 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
     
-      <span><a href="GPU/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = ".";</script>
-    <script src="js/theme_extra.js"></script>
-    <script src="js/theme.js"></script>
-      <script src="search/main.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
     <script>
         jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
@@ -246,8 +246,3 @@
 
 </body>
 </html>
-
-<!--
-MkDocs version : 1.5.3
-Build Date UTC : 2024-06-04 10:05:02.337453+00:00
--->
