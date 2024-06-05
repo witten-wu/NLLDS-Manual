@@ -1,2 +1,5 @@
-site_name: NLLDS-Manual
+site_name: NLL-Manual
+nav:
+  - NLLDS: index.md
+  - GPUDocs: GPUDocs.md
 theme: readthedocs
