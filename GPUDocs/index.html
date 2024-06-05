@@ -64,7 +64,9 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#check-the-resources">Check the resources</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#tips">Tips</a>
+    <li class="toctree-l4"><a class="reference internal" href="#conda">Conda</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tumx">Tumx</a>
     </li>
         </ul>
     </li>
@@ -135,7 +137,7 @@
 | ---------------------------------------------------------------------- |
 | IP               | Port  | User Type      | Remark                     |
 | ---------------------------------------------------------------------- |  
-| xxx.xxx.xxx.xxx  | 22    | CUHK User      | Off-campus users need VPN  |
+| xxx.xxx.xxx.xxx  | 22    | CUHK User      | Off-campus user need VPN  |
 | 8.219.66.9       | 6000  | Non-CUHK User  | Aliyun forwarding          |
 + ---------------------------------------------------------------------- +
 </code></pre>
@@ -190,8 +192,7 @@
 +---------------------------------------------------------------------------------------+
 </code></pre>
 <p>You can see the relevant parameters of the GPU, such as model, CUDA version, memory usage, etc. In this case, The <code>308MiB / 49140MiB</code> stands for 'used/total memory', make sure there is enough memory for you to use! You can also see all processes that are taking up memory, and if you make sure that a process doesn't need to run anymore, you can kill it to free up memory. But be careful not to kill programs that other users may be running!</p>
-<h4 id="tips">Tips</h4>
-<h5 id="conda">Conda</h5>
+<h4 id="conda">Conda</h4>
 <p>First thing first, whenever you create a new python project, the most important step is setting up the python interpreter. Using the python interpreter of your virtual enviornment is recommended, which can separate the develop enviroments for each of your project.</p>
 <p><code>Conda</code> is officially recommended by PyTorch and TensorFlow. Here’s some <code>conda</code> command:</p>
 <pre><code class="language-bash"># create conda env with python (you can specify python version)
@@ -205,7 +206,7 @@ conda deactivate
 # install package like pandas
 conda install pandas
 </code></pre>
-<h5 id="tumx">Tumx</h5>
+<h4 id="tumx">Tumx</h4>
 <p>If you only use ssh to connect to the server to run the program, the program will be shut down as soon as ssh breaks (Even if you don't end it manually, ssh will often break unexpectedly due to network problems). The solution is to use tmux to open a session and run it in the background, even if ssh breaks, tmux server will still keep that session for you, so the program will always run in the background.</p>
 <p>Start a background terminal session using <code>tmux</code>.Simply run <code>tmux</code>, you can get a new session. After run the job, press <code>Ctrl+B D</code> shortcut to detach the session. When you return, use <code>tmux ls</code> to see the session ID, then use <code>tmux a -t &lt;ID&gt;</code> to attach the session and continue the job.</p>
 <h2 id="quick-reference">Quick Reference</h2>
