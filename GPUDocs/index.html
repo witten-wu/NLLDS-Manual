@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>GPU Docs - NLLDS-Manual</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "GPU Docs";
+        var mkdocs_page_input_path = "GPUDocs.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> NLLDS-Manual
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">NLLDS</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">GPU Docs</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">NLLDS-Manual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">GPU Docs</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="gpu-docs">GPU Docs</h1>
+<p>Author: Yidu Wu</p>
+<p>Last updated on June 5, 2024 by Yidu</p>
+<h1 id="_1"></h1>
+<p>Before using the workstation, if you have no experience in using clusters for computing, then we strongly recommend that you take a moment to read the contents of this manual.</p>
+<h2 id="node-summary">Node Summary</h2>
+<pre><code class="language-bash">+ ---------------------------------------------------------------------- +
+| Workstation: Precision 7960 Tower (0A3A)                               |
++ ====================================================================== +
+| Computing Power:                                                       |
+| ---------------------------------------------------------------------- |
+| Type    | Detail                                    | RAM              |
+| ---------------------------------------------------------------------- |
+| CPU     | [1x] Intel Xeon w7-3455 2.50 GHz 24C/48T  | 502GB            |
+| GPU     | [1x] NVIDIA RTX A6000                     | 48GB             | 
++ ====================================================================== +
+| Storage:                  | Capacity  | Disk          | Mount          |
+| ---------------------------------------------------------------------- |                   
+| KXG80ZN84T09 NVMe KIOXIA  | 4TB       | /dev/nvme0n1  | / &amp; /home      |
+| PC SN810 NVMe WDC         | 2TB       | /dev/nvme1n1  | /SSData0       |
+| ST12000NM002J-2T          | 12TB      | /dev/sda      | /BigData0      |
++ ====================================================================== +
+| Other Configurations:                                                  |
+| ---------------------------------------------------------------------- | 
+| Network                | 1Gbps LAN connected to CUHK network           |
+| Operating System       | Ubuntu 22.04 LTS                              |
+| Package pre-installed  | Python 3.10.12 Vim 8.2 Tmux 3.2a              |
++ ====================================================================== +
+| Connect Entry:                                                         |
+| ---------------------------------------------------------------------- |
+| IP               | Port  | User Type      | Remark                     |
+| ---------------------------------------------------------------------- |  
+| xxx.xxx.xxx.xxx  | 22    | CUHK User      | Off-campus users need VPN  |
+| 8.219.66.9       | 6000  | Non-CUHK User  | Aliyun forwarding          |
++ ---------------------------------------------------------------------- +
+</code></pre>
+<h2 id="getting-started">Getting Started</h2>
+<p>This page gives minimum information to run a program on our computing cluster. If you are using the cluster for the first time, you should read this page carefully.</p>
+<h3 id="get-your-account">Get Your Account</h3>
+<p>Before you use the cluster, you should apply an account from our administrators. Please send an email to Yidu Wu (<a href="mailto:yiduwu@cuhk.edu.hk">yiduwu@cuhk.edu.hk</a>) with your <strong>name</strong>, <strong>position</strong>, and <strong>expected study years (for students)</strong>.</p>
+<h3 id="if-you-are-new-to-linux">If you are new to Linux</h3>
+<p>Unfortunately, our cluster is running Linux operating system. If you have never used Linux before, it may be pretty uncomfortable for you to use a new operating system by command line but not GUI. We understand your feeling, but please try to get familiar with Linux commands on a virtual machine before moving on.</p>
+<p>The following document assumes you have experience with Linux.</p>
+<h3 id="for-windows-users">For Windows Users</h3>
+<p>To access a Linux server on Windows, you need to install software through <strong>SSH</strong> and <strong>SFTP</strong>. You can try out the following software.
+- SSH Client: <a href="https://mobaxterm.mobatek.net/">MobaXterm</a>, <a href="https://www.netsarang.com/en/xshell/">XShell (Recommand)</a>
+- SFTP Client: <a href="https://mobaxterm.mobatek.net/">MobaXterm</a>, <a href="https://www.netsarang.com/en/xftp/">Xftp (Recommand)</a>, <a href="https://filezilla-project.org/">FileZilla</a></p>
+<h3 id="login-to-the-cluster">Login to the Cluster</h3>
+<p>The cluster can log through SSH. On Linux or macOS terminal, and Windows PowerShell (Windows 10 1803 or later), input the following command to login.</p>
+<pre><code class="language-bash">$ ssh &lt;username&gt;@xxx.xxx.xxx.xxx -p xxxx
+</code></pre>
+<p>After a successful connection, the server will prompt you to enter a password. Please enter the password which you got from administrators at this time. There will be no response on the interface when you enter the password, but the password has already been entered.</p>
+<h3 id="change-your-password-at-your-first-login">Change your password at your first login</h3>
+<p>An initial password was sent to each user for their first-time-login. For security reason, please change your password with:</p>
+<pre><code class="language-bash">$ passwd
+</code></pre>
+<h3 id="run-your-programme-on-our-compute-nodes">Run your Programme on our Compute Nodes</h3>
+<p>Since we only have 1 GPU right now, we are holding off on using e.g. SLURM resource management software to manage our cluster. Instead of it, at this stage we consider a negotiated allocation to use our compute nodes. An easy way to do this is to book it directly in the DingTalk calendar! Before using the cluster you should organize your schedule ahead of time and add it to our DingTalk calendar, making sure not to cross over with other people's schedules. Please use computing nodes strictly according to the calendar schedule. If there are indeed urgent tasks that need to be prioritized, please negotiate with the user who owns the current schedule.</p>
+<h4 id="check-the-resources">Check the resources</h4>
+<p>Before running the program, check the GPU to ensure there are sufficient computing resources, input the following command.</p>
+<pre><code class="language-bash">$ nvidia-smi
+</code></pre>
+<p>And it will output:</p>
+<pre><code class="language-bash">+---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.171.04             Driver Version: 535.171.04   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA RTX A6000               Off | 00000000:AC:00.0 Off |                  Off |
+| 30%   32C    P8              12W / 300W |    308MiB / 49140MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A      1995      G   /usr/lib/xorg/Xorg                          180MiB |
+|    0   N/A  N/A      2143      G   /usr/bin/gnome-shell                         47MiB |
++---------------------------------------------------------------------------------------+
+</code></pre>
+<p>You can see the relevant parameters of the GPU, such as model, CUDA version, memory usage, etc. In this case, The <code>308MiB / 49140MiB</code> stands for 'used/total memory', make sure there is enough memory for you to use! You can also see all processes that are taking up memory, and if you make sure that a process doesn't need to run anymore, you can kill it to free up memory. But be careful not to kill programs that other users may be running!</p>
+<h4 id="tips">Tips</h4>
+<h5 id="conda">Conda</h5>
+<p>First thing first, whenever you create a new python project, the most important step is setting up the python interpreter. Using the python interpreter of your virtual enviornment is recommended, which can separate the develop enviroments for each of your project.</p>
+<p><code>Conda</code> is officially recommended by PyTorch and TensorFlow. Here’s some <code>conda</code> command:</p>
+<pre><code class="language-bash"># create conda env with python (you can specify python version)
+conda create --name &lt;new-env-name&gt; python=3.8
+# check envs
+conda env list
+# activate env
+conda activate &lt;env-name&gt;
+# deactivate env
+conda deactivate
+# install package like pandas
+conda install pandas
+</code></pre>
+<h5 id="tumx">Tumx</h5>
+<p>If you only use ssh to connect to the server to run the program, the program will be shut down as soon as ssh breaks (Even if you don't end it manually, ssh will often break unexpectedly due to network problems). The solution is to use tmux to open a session and run it in the background, even if ssh breaks, tmux server will still keep that session for you, so the program will always run in the background.</p>
+<p>Start a background terminal session using <code>tmux</code>.Simply run <code>tmux</code>, you can get a new session. After run the job, press <code>Ctrl+B D</code> shortcut to detach the session. When you return, use <code>tmux ls</code> to see the session ID, then use <code>tmux a -t &lt;ID&gt;</code> to attach the session and continue the job.</p>
+<h2 id="quick-reference">Quick Reference</h2>
+<h3 id="contact">Contact</h3>
+<p>The computing cluster and the storage server are managed by Yidu Wu (<a href="mailto:yiduwu@cuhk.edu.hk">yiduwu@cuhk.edu.hk</a>).</p>
+<h3 id="useful-links">Useful Links</h3>
+<ul>
+<li>CUHK VPN: <a href="https://www.itsc.cuhk.edu.hk/all-it/wifi-and-network/cuhk-vpn/">https://www.itsc.cuhk.edu.hk/all-it/wifi-and-network/cuhk-vpn/</a></li>
+<li>Conda User Guide: <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/index.html">https://docs.conda.io/projects/conda/en/latest/user-guide/index.html</a></li>
+<li>Tmux User Guide: <a href="https://hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/">https://hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/</a></li>
+<li>Linux Command Guide: http://www.linuxcommand.org/tlcl.php/tlcl.php</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="NLLDS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
