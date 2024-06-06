@@ -6,9 +6,7 @@ Last updated on June 6, 2024 by Yidu
 Before using the workstation, if you have no experience in using clusters for computing, then we strongly recommend that you take a moment to read the contents of this manual.
 
 ## Workstation Summary
-**Workstation**: Precision 7960 Tower (0A3A)
-
-| Computing Node     | Detail                                    | RAM              |
+| Computing Nodes    | Detail                                    | RAM              |
 | ------------------ | ----------------------------------------- | ---------------- |
 | CPU                | [1x] Intel Xeon w7-3455 2.50 GHz 24C/48T  | 502GB            |
 | GPU                | [1x] NVIDIA RTX A6000                     | 48GB             | 
