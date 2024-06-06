@@ -56,9 +56,11 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#for-windows-users">For Windows Users</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#login-to-the-cluster">Login to the Cluster</a>
+    <li class="toctree-l3"><a class="reference internal" href="#for-linuxmaxos-users">For Linux/MaxOS Users</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#change-your-password-at-your-first-login">Change your password at your first login</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#package-installation">Package Installation</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#run-your-programme-on-our-compute-nodes">Run your Programme on our Compute Nodes</a>
         <ul>
@@ -131,15 +133,31 @@
 | ---------------------------------------------------------------------- | 
 | Network                | 1Gbps LAN connected to CUHK network           |
 | Operating System       | Ubuntu 22.04 LTS                              |
-| Package pre-installed  | Python 3.10.12 Vim 8.2 Tmux 3.2a              |
-+ ====================================================================== +
-| Connect Entry:                                                         |
++ ---------------------------------------------------------------------- +
+
++ ---------------------------------------------------------------------- +
+| Connectivity Entry:                                                    |
 | ---------------------------------------------------------------------- |
 | IP               | Port  | User Type      | Remark                     |
 | ---------------------------------------------------------------------- |  
-| xxx.xxx.xxx.xxx  | 22    | CUHK User      | Off-campus user need VPN  |
+| 137.189.158.26   | 22    | CUHK User      | Off-campus user need VPN   |
 | 8.219.66.9       | 6000  | Non-CUHK User  | Aliyun forwarding          |
 + ---------------------------------------------------------------------- +
+
++ ---------------------------------+
+| Packages pre-installed:          |
+| -------------------------------- |  
+| Python 3.10.12                   |
+| CUDA 12.0                        |
+| cuDNN 8.9.7                      |
+| Conda 24.1.2                     |
+| GCC/G++ 11.4.0                   |
+| Cmake 3.22.1                     |
+| Java 1.8                         |
+| Git 2.34.1                       |
+| Vim 8.2                          |
+| Tmux 3.2a                        |
++ ---------------------------------+
 </code></pre>
 <h2 id="getting-started">Getting Started</h2>
 <p>This page gives minimum information to run a program on our computing cluster. If you are using the cluster for the first time, you should read this page carefully.</p>
@@ -154,7 +172,7 @@
 <li>SSH Client: <a href="https://mobaxterm.mobatek.net/">MobaXterm</a>, <a href="https://www.netsarang.com/en/xshell/">XShell (Recommand)</a></li>
 <li>SFTP Client: <a href="https://mobaxterm.mobatek.net/">MobaXterm</a>, <a href="https://www.netsarang.com/en/xftp/">Xftp (Recommand)</a>, <a href="https://filezilla-project.org/">FileZilla</a></li>
 </ul>
-<h3 id="login-to-the-cluster">Login to the Cluster</h3>
+<h3 id="for-linuxmaxos-users">For Linux/MaxOS Users</h3>
 <p>The cluster can log through <code>SSH</code>. On Linux or macOS terminal, input the following command to login.</p>
 <pre><code class="language-bash">$ ssh &lt;username&gt;@&lt;ip&gt; -p &lt;port&gt;
 </code></pre>
@@ -163,6 +181,8 @@
 <p>An initial password was sent to each user for their first-time-login. For security reason, please change your password with:</p>
 <pre><code class="language-bash">$ passwd
 </code></pre>
+<h3 id="package-installation">Package Installation</h3>
+<p>Please note that for security reasons, all users do not have <code>sudo</code> permissions by default. It means that you cannot install the required packages by raising to <code>root</code> privileges with the <code>sudo</code> command! Nevertheless, you can still install the packages you need by the way of compiling the source code, although this will take some effort and requires some expertise in linux. Alternatively, you can contact the administrator to install the packages for you.</p>
 <h3 id="run-your-programme-on-our-compute-nodes">Run your Programme on our Compute Nodes</h3>
 <p>Since we only have 1 GPU right now, we are holding off on using e.g. SLURM resource management software to manage our cluster. Instead of it, at this stage we consider a negotiated allocation to use our compute nodes. An easy way to do this is to book it directly in the DingTalk calendar! Before using the cluster you should organize your schedule ahead of time and add it to our DingTalk calendar, making sure not to cross over with other people's schedules. Please use computing nodes strictly according to the calendar schedule. If there are indeed urgent tasks that need to be prioritized, please negotiate with the user who owns the current schedule.</p>
 <h4 id="check-the-resources">Check the resources</h4>
