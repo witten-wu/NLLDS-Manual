@@ -114,40 +114,143 @@
 <p>Before using the workstation, if you have no experience in using clusters for computing, then we strongly recommend that you take a moment to read the contents of this manual.</p>
 <h2 id="node-summary">Node Summary</h2>
 <p>Workstation: Precision 7960 Tower (0A3A)</p>
-<p>Computing Power:
-| Type    | Detail                                    | RAM              |
-| ------- | ----------------------------------------- | ---------------- |
-| CPU     | [1x] Intel Xeon w7-3455 2.50 GHz 24C/48T  | 502GB            |
-| GPU     | [1x] NVIDIA RTX A6000                     | 48GB             | </p>
-<p>Storage:
-| Type                      | Capacity  | Disk          | Mount          |
-| ------------------------- | --------- | ------------- | -------------- |                 <br />
-| KXG80ZN84T09 NVMe KIOXIA  | 4TB       | /dev/nvme0n1  | / &amp; /home      |
-| PC SN810 NVMe WDC         | 2TB       | /dev/nvme1n1  | /SSData0       |
-| ST12000NM002J-2T          | 12TB      | /dev/sda      | /BigData0      |</p>
-<p>Other Configurations:
-| Type                   | Remark                                        | 
-| ---------------------- | --------------------------------------------- | 
-| Network                | 1Gbps LAN connected to CUHK network           |
-| Operating System       | Ubuntu 22.04 LTS                              |</p>
-<p>Connectivity Entry:
-| IP               | Port  | User Type      | Remark                     |
-| ---------------- | ----- | -------------- | -------------------------- |<br />
-| 137.189.158.26   | 22    | CUHK User      | Off-campus user need VPN   |
-| 8.219.66.9       | 6000  | Non-CUHK User  | Aliyun forwarding          |</p>
-<p>Packages pre-installed: 
-| Packages                         |
-| -------------------------------- |<br />
-| Python 3.10.12                   |
-| CUDA 12.0                        |
-| cuDNN 8.9.7                      |
-| Conda 24.1.2                     |
-| GCC/G++ 11.4.0                   |
-| Cmake 3.22.1                     |
-| Java 1.8                         |
-| Git 2.34.1                       |
-| Vim 8.2                          |
-| Tmux 3.2a                        |</p>
+<p>Computing Power:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Detail</th>
+<th>RAM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>[1x] Intel Xeon w7-3455 2.50 GHz 24C/48T</td>
+<td>502GB</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>[1x] NVIDIA RTX A6000</td>
+<td>48GB</td>
+</tr>
+</tbody>
+</table>
+<p>Storage:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Capacity</th>
+<th>Disk</th>
+<th>Mount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KXG80ZN84T09 NVMe KIOXIA</td>
+<td>4TB</td>
+<td>/dev/nvme0n1</td>
+<td>/ &amp; /home</td>
+</tr>
+<tr>
+<td>PC SN810 NVMe WDC</td>
+<td>2TB</td>
+<td>/dev/nvme1n1</td>
+<td>/SSData0</td>
+</tr>
+<tr>
+<td>ST12000NM002J-2T</td>
+<td>12TB</td>
+<td>/dev/sda</td>
+<td>/BigData0</td>
+</tr>
+</tbody>
+</table>
+<p>Other Configurations:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Network</td>
+<td>1Gbps LAN connected to CUHK network</td>
+</tr>
+<tr>
+<td>Operating System</td>
+<td>Ubuntu 22.04 LTS</td>
+</tr>
+</tbody>
+</table>
+<p>Connectivity Entry:</p>
+<table>
+<thead>
+<tr>
+<th>IP</th>
+<th>Port</th>
+<th>User Type</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>137.189.158.26</td>
+<td>22</td>
+<td>CUHK User</td>
+<td>Off-campus user need VPN</td>
+</tr>
+<tr>
+<td>8.219.66.9</td>
+<td>6000</td>
+<td>Non-CUHK User</td>
+<td>Aliyun forwarding</td>
+</tr>
+</tbody>
+</table>
+<p>Packages pre-installed: </p>
+<table>
+<thead>
+<tr>
+<th>Packages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python 3.10.12</td>
+</tr>
+<tr>
+<td>CUDA 12.0</td>
+</tr>
+<tr>
+<td>cuDNN 8.9.7</td>
+</tr>
+<tr>
+<td>Conda 24.1.2</td>
+</tr>
+<tr>
+<td>GCC/G++ 11.4.0</td>
+</tr>
+<tr>
+<td>Cmake 3.22.1</td>
+</tr>
+<tr>
+<td>Java 1.8</td>
+</tr>
+<tr>
+<td>Git 2.34.1</td>
+</tr>
+<tr>
+<td>Vim 8.2</td>
+</tr>
+<tr>
+<td>Tmux 3.2a</td>
+</tr>
+</tbody>
+</table>
 <pre><code class="language-bash">+ ---------------------------------------------------------------------- +
 | Workstation: Precision 7960 Tower (0A3A)                               |
 + ====================================================================== +
