@@ -113,12 +113,11 @@
 <p>Last updated on June 6, 2024 by Yidu</p>
 <p>Before using the workstation, if you have no experience in using clusters for computing, then we strongly recommend that you take a moment to read the contents of this manual.</p>
 <h2 id="workstation-summary">Workstation Summary</h2>
-<p>Workstation: Precision 7960 Tower (0A3A)</p>
-<p><strong>Computing Power:</strong></p>
+<p><strong>Workstation</strong>: Precision 7960 Tower (0A3A)</p>
 <table>
 <thead>
 <tr>
-<th>Type</th>
+<th>Computing Node</th>
 <th>Detail</th>
 <th>RAM</th>
 </tr>
@@ -136,11 +135,10 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Storage:</strong></p>
 <table>
 <thead>
 <tr>
-<th>Type</th>
+<th>Storage</th>
 <th>Capacity</th>
 <th>Disk</th>
 <th>Mount</th>
@@ -167,11 +165,10 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Other Configurations:</strong></p>
 <table>
 <thead>
 <tr>
-<th>Type</th>
+<th>Other Configurations</th>
 <th>Remark</th>
 </tr>
 </thead>
@@ -186,7 +183,56 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Connectivity Entry:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Packages pre-installed</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>3.10.12</td>
+</tr>
+<tr>
+<td>CUDA</td>
+<td>12.0</td>
+</tr>
+<tr>
+<td>cuDNN</td>
+<td>8.9.7</td>
+</tr>
+<tr>
+<td>Conda</td>
+<td>24.1.2</td>
+</tr>
+<tr>
+<td>GCC/G++</td>
+<td>11.4.0</td>
+</tr>
+<tr>
+<td>Cmake</td>
+<td>3.22.1</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>1.8</td>
+</tr>
+<tr>
+<td>Git</td>
+<td>2.34.1</td>
+</tr>
+<tr>
+<td>Vim</td>
+<td>8.2</td>
+</tr>
+<tr>
+<td>Tmux</td>
+<td>3.2a</td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
@@ -201,56 +247,64 @@
 <td>137.189.158.26</td>
 <td>22</td>
 <td>CUHK User</td>
-<td>Off-campus user need VPN</td>
+<td>Off-campus user need connect CUHK VPN first</td>
 </tr>
 <tr>
 <td>8.219.66.9</td>
 <td>6000</td>
 <td>Non-CUHK User</td>
-<td>Aliyun forwarding</td>
+<td>Forwarded by Aliyun, latency may exist</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Packages pre-installed:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Packages</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Python 3.10.12</td>
-</tr>
-<tr>
-<td>CUDA 12.0</td>
-</tr>
-<tr>
-<td>cuDNN 8.9.7</td>
-</tr>
-<tr>
-<td>Conda 24.1.2</td>
-</tr>
-<tr>
-<td>GCC/G++ 11.4.0</td>
-</tr>
-<tr>
-<td>Cmake 3.22.1</td>
-</tr>
-<tr>
-<td>Java 1.8</td>
-</tr>
-<tr>
-<td>Git 2.34.1</td>
-</tr>
-<tr>
-<td>Vim 8.2</td>
-</tr>
-<tr>
-<td>Tmux 3.2a</td>
-</tr>
-</tbody>
-</table>
+<!-- ```bash
++ ---------------------------------------------------------------------- +
+| Workstation: Precision 7960 Tower (0A3A)                               |
++ ====================================================================== +
+| Computing Power:                                                       |
+| ---------------------------------------------------------------------- |
+| Type    | Detail                                    | RAM              |
+| ---------------------------------------------------------------------- |
+| CPU     | [1x] Intel Xeon w7-3455 2.50 GHz 24C/48T  | 502GB            |
+| GPU     | [1x] NVIDIA RTX A6000                     | 48GB             | 
++ ====================================================================== +
+| Storage:                  | Capacity  | Disk          | Mount          |
+| ---------------------------------------------------------------------- |                   
+| KXG80ZN84T09 NVMe KIOXIA  | 4TB       | /dev/nvme0n1  | / & /home      |
+| PC SN810 NVMe WDC         | 2TB       | /dev/nvme1n1  | /SSData0       |
+| ST12000NM002J-2T          | 12TB      | /dev/sda      | /BigData0      |
++ ====================================================================== +
+| Other Configurations:                                                  |
+| ---------------------------------------------------------------------- | 
+| Network                | 1Gbps LAN connected to CUHK network           |
+| Operating System       | Ubuntu 22.04 LTS                              |
++ ---------------------------------------------------------------------- +
+
++ ---------------------------------------------------------------------- +
+| Connectivity Entry:                                                    |
+| ---------------------------------------------------------------------- |
+| IP               | Port  | User Type      | Remark                     |
+| ---------------------------------------------------------------------- |  
+| 137.189.158.26   | 22    | CUHK User      | Off-campus user need VPN   |
+| 8.219.66.9       | 6000  | Non-CUHK User  | Aliyun forwarding          |
++ ---------------------------------------------------------------------- +
+
++ ---------------------------------+
+| Packages pre-installed:          |
+| -------------------------------- |  
+| Python 3.10.12                   |
+| CUDA 12.0                        |
+| cuDNN 8.9.7                      |
+| Conda 24.1.2                     |
+| GCC/G++ 11.4.0                   |
+| Cmake 3.22.1                     |
+| Java 1.8                         |
+| Git 2.34.1                       |
+| Vim 8.2                          |
+| Tmux 3.2a                        |
++ ---------------------------------+
+``` -->
+
 <h2 id="getting-started">Getting Started</h2>
 <p>This page gives minimum information to run a program on our computing cluster. If you are using the cluster for the first time, you should read this page carefully.</p>
 <h3 id="get-your-account">Get Your Account</h3>
