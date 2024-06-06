@@ -46,7 +46,7 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">GPUDocs</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#node-summary">Node Summary</a>
+    <li class="toctree-l2"><a class="reference internal" href="#workstation-summary">Workstation Summary</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a>
         <ul>
@@ -110,11 +110,11 @@
               
                 <h1 id="gpu-docs">GPU Docs</h1>
 <p>Author: Yidu Wu</p>
-<p>Last updated on June 5, 2024 by Yidu</p>
+<p>Last updated on June 6, 2024 by Yidu</p>
 <p>Before using the workstation, if you have no experience in using clusters for computing, then we strongly recommend that you take a moment to read the contents of this manual.</p>
-<h2 id="node-summary">Node Summary</h2>
+<h2 id="workstation-summary">Workstation Summary</h2>
 <p>Workstation: Precision 7960 Tower (0A3A)</p>
-<p>Computing Power:</p>
+<p><strong>Computing Power:</strong></p>
 <table>
 <thead>
 <tr>
@@ -136,7 +136,7 @@
 </tr>
 </tbody>
 </table>
-<p>Storage:</p>
+<p><strong>Storage:</strong></p>
 <table>
 <thead>
 <tr>
@@ -167,7 +167,7 @@
 </tr>
 </tbody>
 </table>
-<p>Other Configurations:</p>
+<p><strong>Other Configurations:</strong></p>
 <table>
 <thead>
 <tr>
@@ -186,7 +186,7 @@
 </tr>
 </tbody>
 </table>
-<p>Connectivity Entry:</p>
+<p><strong>Connectivity Entry:</strong></p>
 <table>
 <thead>
 <tr>
@@ -211,7 +211,7 @@
 </tr>
 </tbody>
 </table>
-<p>Packages pre-installed: </p>
+<p><strong>Packages pre-installed:</strong></p>
 <table>
 <thead>
 <tr>
@@ -251,52 +251,6 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="language-bash">+ ---------------------------------------------------------------------- +
-| Workstation: Precision 7960 Tower (0A3A)                               |
-+ ====================================================================== +
-| Computing Power:                                                       |
-| ---------------------------------------------------------------------- |
-| Type    | Detail                                    | RAM              |
-| ---------------------------------------------------------------------- |
-| CPU     | [1x] Intel Xeon w7-3455 2.50 GHz 24C/48T  | 502GB            |
-| GPU     | [1x] NVIDIA RTX A6000                     | 48GB             | 
-+ ====================================================================== +
-| Storage:                  | Capacity  | Disk          | Mount          |
-| ---------------------------------------------------------------------- |                   
-| KXG80ZN84T09 NVMe KIOXIA  | 4TB       | /dev/nvme0n1  | / &amp; /home      |
-| PC SN810 NVMe WDC         | 2TB       | /dev/nvme1n1  | /SSData0       |
-| ST12000NM002J-2T          | 12TB      | /dev/sda      | /BigData0      |
-+ ====================================================================== +
-| Other Configurations:                                                  |
-| ---------------------------------------------------------------------- | 
-| Network                | 1Gbps LAN connected to CUHK network           |
-| Operating System       | Ubuntu 22.04 LTS                              |
-+ ---------------------------------------------------------------------- +
-
-+ ---------------------------------------------------------------------- +
-| Connectivity Entry:                                                    |
-| ---------------------------------------------------------------------- |
-| IP               | Port  | User Type      | Remark                     |
-| ---------------------------------------------------------------------- |  
-| 137.189.158.26   | 22    | CUHK User      | Off-campus user need VPN   |
-| 8.219.66.9       | 6000  | Non-CUHK User  | Aliyun forwarding          |
-+ ---------------------------------------------------------------------- +
-
-+ ---------------------------------+
-| Packages pre-installed:          |
-| -------------------------------- |  
-| Python 3.10.12                   |
-| CUDA 12.0                        |
-| cuDNN 8.9.7                      |
-| Conda 24.1.2                     |
-| GCC/G++ 11.4.0                   |
-| Cmake 3.22.1                     |
-| Java 1.8                         |
-| Git 2.34.1                       |
-| Vim 8.2                          |
-| Tmux 3.2a                        |
-+ ---------------------------------+
-</code></pre>
 <h2 id="getting-started">Getting Started</h2>
 <p>This page gives minimum information to run a program on our computing cluster. If you are using the cluster for the first time, you should read this page carefully.</p>
 <h3 id="get-your-account">Get Your Account</h3>
