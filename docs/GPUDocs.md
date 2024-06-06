@@ -1,12 +1,48 @@
 # GPU Docs
 Author: Yidu Wu
 
-Last updated on June 5, 2024 by Yidu
+Last updated on June 6, 2024 by Yidu
 
 Before using the workstation, if you have no experience in using clusters for computing, then we strongly recommend that you take a moment to read the contents of this manual.
 
-## Node Summary
-```bash
+## Workstation Summary
+**Workstation**: Precision 7960 Tower (0A3A)
+
+| Computing Node     | Detail                                    | RAM              |
+| ------------------ | ----------------------------------------- | ---------------- |
+| CPU                | [1x] Intel Xeon w7-3455 2.50 GHz 24C/48T  | 502GB            |
+| GPU                | [1x] NVIDIA RTX A6000                     | 48GB             | 
+
+| Storage                   | Capacity  | Disk          | Mount          |
+| ------------------------- | --------- | ------------- | -------------- |                   
+| KXG80ZN84T09 NVMe KIOXIA  | 4TB       | /dev/nvme0n1  | / & /home      |
+| PC SN810 NVMe WDC         | 2TB       | /dev/nvme1n1  | /SSData0       |
+| ST12000NM002J-2T          | 12TB      | /dev/sda      | /BigData0      |
+
+| Other Configurations   | Remark                                        | 
+| ---------------------- | --------------------------------------------- | 
+| Network                | 1Gbps LAN connected to CUHK network           |
+| Operating System       | Ubuntu 22.04 LTS                              |
+
+| Packages pre-installed  | Version |
+| ------------------------| ------- | 
+| Python                  | 3.10.12 |
+| CUDA                    | 12.0    |
+| cuDNN                   | 8.9.7   |
+| Conda                   | 24.1.2  |
+| GCC/G++                 | 11.4.0  |
+| Cmake                   | 3.22.1  |
+| Java                    | 1.8     |
+| Git                     | 2.34.1  |
+| Vim                     | 8.2     |
+| Tmux                    | 3.2a    |
+
+| IP               | Port  | User Type      | Remark                                       |
+| ---------------- | ----- | -------------- | -------------------------------------------- |  
+| 137.189.158.26   | 22    | CUHK User      | Off-campus user need connect CUHK VPN first  |
+| 8.219.66.9       | 6000  | Non-CUHK User  | Forwarded by Aliyun, latency may exist       |
+
+<!-- ```bash
 + ---------------------------------------------------------------------- +
 | Workstation: Precision 7960 Tower (0A3A)                               |
 + ====================================================================== +
@@ -27,16 +63,32 @@ Before using the workstation, if you have no experience in using clusters for co
 | ---------------------------------------------------------------------- | 
 | Network                | 1Gbps LAN connected to CUHK network           |
 | Operating System       | Ubuntu 22.04 LTS                              |
-| Package pre-installed  | Python 3.10.12 Vim 8.2 Tmux 3.2a              |
-+ ====================================================================== +
-| Connect Entry:                                                         |
++ ---------------------------------------------------------------------- +
+
++ ---------------------------------------------------------------------- +
+| Connectivity Entry:                                                    |
 | ---------------------------------------------------------------------- |
 | IP               | Port  | User Type      | Remark                     |
 | ---------------------------------------------------------------------- |  
-| xxx.xxx.xxx.xxx  | 22    | CUHK User      | Off-campus user need VPN  |
+| 137.189.158.26   | 22    | CUHK User      | Off-campus user need VPN   |
 | 8.219.66.9       | 6000  | Non-CUHK User  | Aliyun forwarding          |
 + ---------------------------------------------------------------------- +
-```
+
++ ---------------------------------+
+| Packages pre-installed:          |
+| -------------------------------- |  
+| Python 3.10.12                   |
+| CUDA 12.0                        |
+| cuDNN 8.9.7                      |
+| Conda 24.1.2                     |
+| GCC/G++ 11.4.0                   |
+| Cmake 3.22.1                     |
+| Java 1.8                         |
+| Git 2.34.1                       |
+| Vim 8.2                          |
+| Tmux 3.2a                        |
++ ---------------------------------+
+``` -->
 
 ## Getting Started
 This page gives minimum information to run a program on our computing cluster. If you are using the cluster for the first time, you should read this page carefully.
@@ -55,7 +107,7 @@ To access a Linux server on Windows, you need to install software through **SSH*
 - SSH Client: [MobaXterm](https://mobaxterm.mobatek.net/), [XShell (Recommand)](https://www.netsarang.com/en/xshell/)
 - SFTP Client: [MobaXterm](https://mobaxterm.mobatek.net/), [Xftp (Recommand)](https://www.netsarang.com/en/xftp/), [FileZilla](https://filezilla-project.org/)
 
-### Login to the Cluster
+### For Linux/MaxOS Users
 
 The cluster can log through `SSH`. On Linux or macOS terminal, input the following command to login.
 ```bash
@@ -68,6 +120,9 @@ An initial password was sent to each user for their first-time-login. For securi
 ```bash
 $ passwd
 ```
+
+### Package Installation
+Please note that for security reasons, all users do not have `sudo` permissions by default. It means that you cannot install the required packages by raising to `root` privileges with the `sudo` command! Nevertheless, you can still install the packages you need by the way of compiling the source code, although this will take some effort and requires some expertise in linux. Alternatively, you can contact the administrator to install the packages for you.
 
 ### Run your Programme on our Compute Nodes
 Since we only have 1 GPU right now, we are holding off on using e.g. SLURM resource management software to manage our cluster. Instead of it, at this stage we consider a negotiated allocation to use our compute nodes. An easy way to do this is to book it directly in the DingTalk calendar! Before using the cluster you should organize your schedule ahead of time and add it to our DingTalk calendar, making sure not to cross over with other people's schedules. Please use computing nodes strictly according to the calendar schedule. If there are indeed urgent tasks that need to be prioritized, please negotiate with the user who owns the current schedule.
