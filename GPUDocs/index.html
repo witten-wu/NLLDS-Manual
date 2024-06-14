@@ -417,7 +417,7 @@ conda install pandas
 <h4 id="running-example">Running example</h4>
 <p>Here I will show you an example to run python program.</p>
 <ol>
-<li>Suppose we want to execute the following Python code:</li>
+<li>Suppose we want to execute the following Python code, which is the multiplication of two matrix of 10240 x 10240 dimensions:</li>
 </ol>
 <pre><code class="language-bash">import numpy as np
 import cupy as cp
@@ -459,9 +459,9 @@ print(f&quot;GPU time consumption: {gpu_time:.6f} second&quot;)
 <p>Supposed I have already uploaded the python file to my home path. Now we can check it.</p>
 </li>
 </ol>
-<p><img alt="" src="img/XShell5.png" /></p>
+<p><img alt="" src="../img/Xshell5.png" /></p>
 <p>We can see the test.py under my home dir. Now use <code>vi test.py</code> to view the file content.</p>
-<p><img alt="" src="img/XShell6.png" /></p>
+<p><img alt="" src="../img/Xshell6.png" /></p>
 <ol>
 <li>If there is no problem, we can prepare to run the code. Excute the following command to create a virtual enviornment for python.</li>
 </ol>
@@ -469,10 +469,10 @@ print(f&quot;GPU time consumption: {gpu_time:.6f} second&quot;)
 </code></pre>
 <p>Learn to use conda to separate the develop enviroments for each of your project is very important.</p>
 <p>After that, excute command <code>tmux</code> and we will get a new window like this:</p>
-<p><img alt="" src="img/XShell7.png" /></p>
+<p><img alt="" src="../img/Xshell7.png" /></p>
 <p>Tumx can make the program always run in the background even if you exit the ssh. </p>
 <p>Now we need to activate the virtual python environment created before, like this:</p>
-<p><img alt="" src="img/XShell8.png" /></p>
+<p><img alt="" src="../img/Xshell8.png" /></p>
 <p>We can find our python environment has changed from base to <code>gputest</code>.</p>
 <ol>
 <li>install the packages required.</li>
@@ -483,7 +483,7 @@ conda install -c conda-forge cupy
 <ol>
 <li>Then we run the GPU python code, we can find that the GPU is much faster than the CPU in the matrix multiplication operation with dimension 10240 x 10240.</li>
 </ol>
-<p><img alt="" src="img/XShell9.png" /></p>
+<p><img alt="" src="../img/Xshell9.png" /></p>
 <p>Now you should know how to run your program in our cluster.</p>
 <h2 id="quick-reference">Quick Reference</h2>
 <h3 id="contact">Contact</h3>
