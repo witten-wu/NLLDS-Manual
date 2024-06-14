@@ -227,7 +227,7 @@ Start a background terminal session using `tmux`.Simply run `tmux`, you can get 
 
 Here I will show you an example to run python program.
 
-1. Suppose we want to execute the following Python code:
+1. Suppose we want to execute the following Python code, which is the multiplication of two matrix of 10240 x 10240 dimensions:
 
 ```bash
 import numpy as np
@@ -267,11 +267,11 @@ print(f"GPU time consumption: {gpu_time:.6f} second")
 
 3. Supposed I have already uploaded the python file to my home path. Now we can check it.
 
-![](img/XShell5.png)
+![](img/Xshell5.png)
 
 We can see the test.py under my home dir. Now use `vi test.py` to view the file content.
 
-![](img/XShell6.png)
+![](img/Xshell6.png)
 
 4. If there is no problem, we can prepare to run the code. Excute the following command to create a virtual enviornment for python.
 
@@ -283,13 +283,13 @@ Learn to use conda to separate the develop enviroments for each of your project 
 
 After that, excute command `tmux` and we will get a new window like this:
 
-![](img/XShell7.png)
+![](img/Xshell7.png)
 
 Tumx can make the program always run in the background even if you exit the ssh. 
 
 Now we need to activate the virtual python environment created before, like this:
 
-![](img/XShell8.png)
+![](img/Xshell8.png)
 
 We can find our python environment has changed from base to `gputest`.
 
@@ -302,7 +302,7 @@ conda install -c conda-forge cupy
 
 6. Then we run the GPU python code, we can find that the GPU is much faster than the CPU in the matrix multiplication operation with dimension 10240 x 10240.
 
-![](img/XShell9.png)
+![](img/Xshell9.png)
 
 Now you should know how to run your program in our cluster.
 
