@@ -102,8 +102,53 @@ The following document assumes you have experience with Linux.
 ### For Windows Users
 To access a Linux server on Windows, you need to install software through **SSH** and **SFTP**. You can try out the following software.
 
-- SSH Client: [MobaXterm](https://mobaxterm.mobatek.net/), [XShell (Recommand)](https://www.netsarang.com/en/xshell/)
-- SFTP Client: [MobaXterm](https://mobaxterm.mobatek.net/), [Xftp (Recommand)](https://www.netsarang.com/en/xftp/), [FileZilla](https://filezilla-project.org/)
+- SSH Client (For Command Line): [MobaXterm](https://mobaxterm.mobatek.net/), [XShell (Recommand)](https://www.netsarang.com/en/xshell/)
+- SFTP Client (For File Upload): [MobaXterm](https://mobaxterm.mobatek.net/), [Xftp (Recommand)](https://www.netsarang.com/en/xftp/), [FileZilla](https://filezilla-project.org/)
+
+Here is the URL to download `Xshell` and `Xftp`: https://www.netsarang.com/en/free-for-home-school/ . Please note that this is free, no purchase required.
+
+#### Connect Example (XShell)
+
+After installation we run Xshell, the first thing we need to do is to create a new session to connect to our cluster. Here is the configuration:
+
+- `Protocal`: SSH
+- `Host`: IP Address (Reference Workstation Summary)
+- `Port`: Port (Reference Workstation Summary) 
+
+![](img/Xshell1.png)
+
+After that, click `Connect` button and enter your username with password.
+
+![](img/Xshell2.png)
+
+![](img/Xshell3.png)
+
+After connected, you can start executing your command now! Please note that each user will have their own home dir, as shown in the picture, `/home/<your_username>` is your home path. You can run your program and upload your files here. 
+
+![](img/Xshell4.png)
+
+#### Connect Example (XFtp)
+
+Similar to above, we run XFtp and make the configuration.
+
+- `Host`: IP Address (Reference Workstation Summary)
+- `Protocal`: SFTP
+- `Port`: Port (Reference Workstation Summary) 
+- `Method`: Password
+
+Enter your username with password and click connect button.
+
+![](img/XFtp1.png)
+
+After connected, The left panel is your local file system and the right is the remote. You can now upload and download files as you like. 
+
+![](img/XFtp2.png)
+
+Please make sure that you only upload files to these three paths, which you have the full access:
+
+- `/home/<your_username>`: Your home dir
+- `/BigData0`: Extra Disk (Reference Workstation Summary)
+- `/SSData0`: Extra Disk (Reference Workstation Summary)
 
 ### For Linux/MaxOS Users
 
@@ -177,6 +222,89 @@ conda install pandas
 If you only use ssh to connect to the server to run the program, the program will be shut down as soon as ssh breaks (Even if you don't end it manually, ssh will often break unexpectedly due to network problems). The solution is to use tmux to open a session and run it in the background, even if ssh breaks, tmux server will still keep that session for you, so the program will always run in the background.
 
 Start a background terminal session using `tmux`.Simply run `tmux`, you can get a new session. After run the job, press `Ctrl+B D` shortcut to detach the session. When you return, use `tmux ls` to see the session ID, then use `tmux a -t <ID>` to attach the session and continue the job.
+
+#### Running example
+
+Here I will show you an example to run python program.
+
+1. Suppose we want to execute the following Python code:
+
+```bash
+import numpy as np
+import cupy as cp
+import time
+
+# Generate matrix on the CPU
+A = np.random.rand(10240, 10240).astype(np.float32)
+B = np.random.rand(10240, 10240).astype(np.float32)
+
+# Copy matrix to GPU memory
+A_gpu = cp.array(A)
+B_gpu = cp.array(B)
+
+# CPU function 
+def cpu_matrix_mul(A, B):
+    return np.matmul(A, B)
+
+# GPU function
+def gpu_matrix_mul(A, B):
+    return cp.matmul(A, B)
+
+# Test CPU Running time
+start = time.time()
+C_cpu = cpu_matrix_mul(A, B)
+cpu_time = time.time() - start
+print(f"CPU time consumption: {cpu_time:.6f} second")
+
+# Test GPU Running time
+start = time.time()
+C_gpu = gpu_matrix_mul(A_gpu, B_gpu)
+gpu_time = time.time() - start
+print(f"GPU time consumption: {gpu_time:.6f} second")
+```
+
+2. The first thing we need to do is to upload this python file to our GPU cluster, We've already covered how to upload files with XFtp earlier on.
+
+3. Supposed I have already uploaded the python file to my home path. Now we can check it.
+
+![](img/XShell5.png)
+
+We can see the test.py under my home dir. Now use `vi test.py` to view the file content.
+
+![](img/XShell6.png)
+
+4. If there is no problem, we can prepare to run the code. Excute the following command to create a virtual enviornment for python.
+
+```bash
+conda create --name gputest python=3.9
+```
+
+Learn to use conda to separate the develop enviroments for each of your project is very important.
+
+After that, excute command `tmux` and we will get a new window like this:
+
+![](img/XShell7.png)
+
+Tumx can make the program always run in the background even if you exit the ssh. 
+
+Now we need to activate the virtual python environment created before, like this:
+
+![](img/XShell8.png)
+
+We can find our python environment has changed from base to `gputest`.
+
+5. install the packages required.
+
+```bash
+conda install numpy
+conda install -c conda-forge cupy
+```
+
+6. Then we run the GPU python code, we can find that the GPU is much faster than the CPU in the matrix multiplication operation with dimension 10240 x 10240.
+
+![](img/XShell9.png)
+
+Now you should know how to run your program in our cluster.
 
 ## Quick Reference
 ### Contact
