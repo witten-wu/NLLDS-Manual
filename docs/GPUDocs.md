@@ -25,6 +25,7 @@ Before using the workstation, if you have no experience in using clusters for co
 | Packages pre-installed  | Version |
 | ------------------------| ------- | 
 | Python                  | 3.10.12 |
+| MATLAB                  | R2024a  |
 | CUDA                    | 12.0    |
 | cuDNN                   | 8.9.7   |
 | Conda                   | 24.1.2  |
@@ -223,11 +224,31 @@ If you only use ssh to connect to the server to run the program, the program wil
 
 Start a background terminal session using `tmux`.Simply run `tmux`, you can get a new session. After run the job, press `Ctrl+B D` shortcut to detach the session. When you return, use `tmux ls` to see the session ID, then use `tmux a -t <ID>` to attach the session and continue the job.
 
-#### Running example
+#### MATLAB
 
-Here I will show you an example to run python program.
+All of the above assumes you are using the python; if you are a MATLAB user, please read the following carefully.
 
-1. Suppose we want to execute the following Python code, which is the multiplication of two matrix of 10240 x 10240 dimensions:
+We have already pre-installed the MATLAB (R2024a) in our cluster. Unfortunately, we are unable to share MATLAB licences within the cluster due to MATLAB's strict licensing requirements. And it's also not possible to sign in with multiple user accounts on the same server instance, whether it's a real or virtual server. This means that only one user is allowed to use MATLAB in our cluster at any given time, and if other users need to use it they need to queue up, so I recommend that you schedule a MATLAB appointment in our DingTalk calendar just like GPU before.
+
+I recommend using the MATLAB resources in our cluster only when you need to use the GPU to assist in computing MATLAB program, because in this way the occupancy time of MATLAB is consistent with the occupancy time of the GPU. For other tasks, you can do it on your own computer with CPU.
+
+Nevertheless, you can still use it without restriction by installing a separate MATLAB program in your own home dir. This assumes that you have a MATLAB licence and you can activate it with your own licence. 
+
+**Instructions for using our pre-installed MATLAB:**
+
+Before using it you should get the username/password of our MATLAB user from the administrator, please note that this is a separate LINUX user which only used to run MATLAB. Please make sure to plan your time well and don’t take up too much time or conflict with others.
+
+Please note that if you need to install any third-party tools, please contact the administrator!
+
+Please also note that the pre-installed MATLAB in our cluster is tied to our administrator's licence. If you encounter MATLAB updates or verifications from time to time, please contact administrator for assistance.
+
+We will give a running example of MATLAB below.
+
+#### Running example (Python)
+
+Here I will show you an example to run python programme.
+
+- Suppose we want to execute the following Python code, which is the multiplication of two matrix of 10240 x 10240 dimensions:
 
 ```bash
 import numpy as np
@@ -263,9 +284,9 @@ gpu_time = time.time() - start
 print(f"GPU time consumption: {gpu_time:.6f} second")
 ```
 
-2. The first thing we need to do is to upload this python file to our GPU cluster, We've already covered how to upload files with XFtp earlier on.
+- The first thing we need to do is to upload this python file to our GPU cluster, We've already covered how to upload files with XFtp earlier on.
 
-3. Supposed I have already uploaded the python file to my home path. Now we can check it.
+- Supposed I have already uploaded the python file to my home path. Now we can check it.
 
 ![](img/Xshell5.png)
 
@@ -273,7 +294,7 @@ We can see the test.py under my home dir. Now use `vi test.py` to view the file 
 
 ![](img/Xshell6.png)
 
-4. If there is no problem, we can prepare to run the code. Excute the following command to create a virtual enviornment for python.
+- If there is no problem, we can prepare to run the code. Excute the following command to create a virtual enviornment for python.
 
 ```bash
 conda create --name gputest python=3.9
@@ -293,18 +314,70 @@ Now we need to activate the virtual python environment created before, like this
 
 We can find our python environment has changed from base to `gputest`.
 
-5. install the packages required.
+- install the packages required.
 
 ```bash
 conda install numpy
 conda install -c conda-forge cupy
 ```
 
-6. Then we run the GPU python code, we can find that the GPU is much faster than the CPU in the matrix multiplication operation with dimension 10240 x 10240.
+6. Then we run the GPU python code, we can find that the GPU is much faster than the CPU.
 
 ![](img/Xshell9.png)
 
-Now you should know how to run your program in our cluster.
+#### Running example (MATLAB)
+
+Here I will show you an example to run MATLAB programme.
+
+- Suppose we want to execute the following matrix multiplication MATLAB code:
+
+```bash
+% Generate matrix on the CPU
+A = rand(10240, 10240, 'single');
+B = rand(10240, 10240, 'single');
+
+% Copy matrix to GPU memory
+A_gpu = gpuArray(A);
+B_gpu = gpuArray(B);
+
+% CPU function
+function C = cpu_matrix_mul(A, B)
+    C = A * B;
+end
+
+% GPU function
+function C = gpu_matrix_mul(A, B)
+    C = gather(A * B);
+end
+
+% Test CPU Running time
+tic;
+C_cpu = cpu_matrix_mul(A, B);
+cpu_time = toc;
+fprintf("CPU time consumption: %.6f seconds\n", cpu_time);
+
+% Test GPU Running time
+tic;
+C_gpu = gpu_matrix_mul(A_gpu, B_gpu);
+gpu_time = toc;
+fprintf("GPU time consumption: %.6f seconds\n", gpu_time);
+```
+
+- Login to our cluster as a MATLAB user. You can switch to it by command `su matlab`. Then type the password got from our administrator.
+
+![](img/Xshell10.png)
+
+- Then upload the MATLAB file to this home dir. In this case, I have uploaded it under Desktop folder.
+
+![](img/Xshell11.png)
+
+- Then run the `matlab` command directly to start matlab, which we set to start from the command line by default. And the we can execute our GPU test programme like this:
+
+![](img/Xshell12.png)
+
+Then we can see the resuls.
+
+**Now you should know how to run your programme in our cluster.**
 
 ## Quick Reference
 ### Contact
@@ -315,3 +388,5 @@ The computing cluster and the storage server are managed by Yidu Wu ([yiduwu@cuh
 - Conda User Guide: <https://docs.conda.io/projects/conda/en/latest/user-guide/index.html>
 - Tmux User Guide: <https://hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/>
 - Linux Command Guide: <http://www.linuxcommand.org/tlcl.php/tlcl.php>
+- MATLAB Installation Guide: <https://ww2.mathworks.cn/matlabcentral/answers/98886-how-do-i-install-matlab-and-its-toolboxes>
+- MATLAB GPU Guide: <https://ww2.mathworks.cn/help/parallel-computing/gpu-computing-requirements.html>

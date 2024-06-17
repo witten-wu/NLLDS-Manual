@@ -76,7 +76,11 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#tumx">Tumx</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#running-example">Running example</a>
+    <li class="toctree-l4"><a class="reference internal" href="#matlab">MATLAB</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#running-example-python">Running example (Python)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#running-example-matlab">Running example (MATLAB)</a>
     </li>
         </ul>
     </li>
@@ -201,6 +205,10 @@
 <tr>
 <td>Python</td>
 <td>3.10.12</td>
+</tr>
+<tr>
+<td>MATLAB</td>
+<td>R2024a</td>
 </tr>
 <tr>
 <td>CUDA</td>
@@ -414,11 +422,21 @@ conda install pandas
 <h4 id="tumx">Tumx</h4>
 <p>If you only use ssh to connect to the server to run the program, the program will be shut down as soon as ssh breaks (Even if you don't end it manually, ssh will often break unexpectedly due to network problems). The solution is to use tmux to open a session and run it in the background, even if ssh breaks, tmux server will still keep that session for you, so the program will always run in the background.</p>
 <p>Start a background terminal session using <code>tmux</code>.Simply run <code>tmux</code>, you can get a new session. After run the job, press <code>Ctrl+B D</code> shortcut to detach the session. When you return, use <code>tmux ls</code> to see the session ID, then use <code>tmux a -t &lt;ID&gt;</code> to attach the session and continue the job.</p>
-<h4 id="running-example">Running example</h4>
-<p>Here I will show you an example to run python program.</p>
-<ol>
+<h4 id="matlab">MATLAB</h4>
+<p>All of the above assumes you are using the python; if you are a MATLAB user, please read the following carefully.</p>
+<p>We have already pre-installed the MATLAB (R2024a) in our cluster. Unfortunately, we are unable to share MATLAB licences within the cluster due to MATLAB's strict licensing requirements. And it's also not possible to sign in with multiple user accounts on the same server instance, whether it's a real or virtual server. This means that only one user is allowed to use MATLAB in our cluster at any given time, and if other users need to use it they need to queue up, so I recommend that you schedule a MATLAB appointment in our DingTalk calendar just like GPU before.</p>
+<p>I recommend using the MATLAB resources in our cluster only when you need to use the GPU to assist in computing MATLAB program, because in this way the occupancy time of MATLAB is consistent with the occupancy time of the GPU. For other tasks, you can do it on your own computer with CPU.</p>
+<p>Nevertheless, you can still use it without restriction by installing a separate MATLAB program in your own home dir. This assumes that you have a MATLAB licence and you can activate it with your own licence. </p>
+<p><strong>Instructions for using our pre-installed MATLAB:</strong></p>
+<p>Before using it you should get the username/password of our MATLAB user from the administrator, please note that this is a separate LINUX user which only used to run MATLAB. Please make sure to plan your time well and don’t take up too much time or conflict with others.</p>
+<p>Please note that if you need to install any third-party tools, please contact the administrator!</p>
+<p>Please also note that the pre-installed MATLAB in our cluster is tied to our administrator's licence. If you encounter MATLAB updates or verifications from time to time, please contact administrator for assistance.</p>
+<p>We will give a running example of MATLAB below.</p>
+<h4 id="running-example-python">Running example (Python)</h4>
+<p>Here I will show you an example to run python programme.</p>
+<ul>
 <li>Suppose we want to execute the following Python code, which is the multiplication of two matrix of 10240 x 10240 dimensions:</li>
-</ol>
+</ul>
 <pre><code class="language-bash">import numpy as np
 import cupy as cp
 import time
@@ -451,20 +469,20 @@ C_gpu = gpu_matrix_mul(A_gpu, B_gpu)
 gpu_time = time.time() - start
 print(f&quot;GPU time consumption: {gpu_time:.6f} second&quot;)
 </code></pre>
-<ol>
+<ul>
 <li>
 <p>The first thing we need to do is to upload this python file to our GPU cluster, We've already covered how to upload files with XFtp earlier on.</p>
 </li>
 <li>
 <p>Supposed I have already uploaded the python file to my home path. Now we can check it.</p>
 </li>
-</ol>
+</ul>
 <p><img alt="" src="../img/Xshell5.png" /></p>
 <p>We can see the test.py under my home dir. Now use <code>vi test.py</code> to view the file content.</p>
 <p><img alt="" src="../img/Xshell6.png" /></p>
-<ol>
+<ul>
 <li>If there is no problem, we can prepare to run the code. Excute the following command to create a virtual enviornment for python.</li>
-</ol>
+</ul>
 <pre><code class="language-bash">conda create --name gputest python=3.9
 </code></pre>
 <p>Learn to use conda to separate the develop enviroments for each of your project is very important.</p>
@@ -474,17 +492,65 @@ print(f&quot;GPU time consumption: {gpu_time:.6f} second&quot;)
 <p>Now we need to activate the virtual python environment created before, like this:</p>
 <p><img alt="" src="../img/Xshell8.png" /></p>
 <p>We can find our python environment has changed from base to <code>gputest</code>.</p>
-<ol>
+<ul>
 <li>install the packages required.</li>
-</ol>
+</ul>
 <pre><code class="language-bash">conda install numpy
 conda install -c conda-forge cupy
 </code></pre>
 <ol>
-<li>Then we run the GPU python code, we can find that the GPU is much faster than the CPU in the matrix multiplication operation with dimension 10240 x 10240.</li>
+<li>Then we run the GPU python code, we can find that the GPU is much faster than the CPU.</li>
 </ol>
 <p><img alt="" src="../img/Xshell9.png" /></p>
-<p>Now you should know how to run your program in our cluster.</p>
+<h4 id="running-example-matlab">Running example (MATLAB)</h4>
+<p>Here I will show you an example to run MATLAB programme.</p>
+<ul>
+<li>Suppose we want to execute the following matrix multiplication MATLAB code:</li>
+</ul>
+<pre><code class="language-bash">% Generate matrix on the CPU
+A = rand(10240, 10240, 'single');
+B = rand(10240, 10240, 'single');
+
+% Copy matrix to GPU memory
+A_gpu = gpuArray(A);
+B_gpu = gpuArray(B);
+
+% CPU function
+function C = cpu_matrix_mul(A, B)
+    C = A * B;
+end
+
+% GPU function
+function C = gpu_matrix_mul(A, B)
+    C = gather(A * B);
+end
+
+% Test CPU Running time
+tic;
+C_cpu = cpu_matrix_mul(A, B);
+cpu_time = toc;
+fprintf(&quot;CPU time consumption: %.6f seconds\n&quot;, cpu_time);
+
+% Test GPU Running time
+tic;
+C_gpu = gpu_matrix_mul(A_gpu, B_gpu);
+gpu_time = toc;
+fprintf(&quot;GPU time consumption: %.6f seconds\n&quot;, gpu_time);
+</code></pre>
+<ul>
+<li>Login to our cluster as a MATLAB user. You can switch to it by command <code>su matlab</code>. Then type the password got from our administrator.</li>
+</ul>
+<p><img alt="" src="../img/Xshell10.png" /></p>
+<ul>
+<li>Then upload the MATLAB file to this home dir. In this case, I have uploaded it under Desktop folder.</li>
+</ul>
+<p><img alt="" src="../img/Xshell11.png" /></p>
+<ul>
+<li>Then run the <code>matlab</code> command directly to start matlab, which we set to start from the command line by default. And the we can execute our GPU test programme like this:</li>
+</ul>
+<p><img alt="" src="../img/Xshell12.png" /></p>
+<p>Then we can see the resuls.</p>
+<p><strong>Now you should know how to run your programme in our cluster.</strong></p>
 <h2 id="quick-reference">Quick Reference</h2>
 <h3 id="contact">Contact</h3>
 <p>The computing cluster and the storage server are managed by Yidu Wu (<a href="mailto:yiduwu@cuhk.edu.hk">yiduwu@cuhk.edu.hk</a>).</p>
@@ -494,6 +560,8 @@ conda install -c conda-forge cupy
 <li>Conda User Guide: <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/index.html">https://docs.conda.io/projects/conda/en/latest/user-guide/index.html</a></li>
 <li>Tmux User Guide: <a href="https://hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/">https://hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/</a></li>
 <li>Linux Command Guide: <a href="http://www.linuxcommand.org/tlcl.php/tlcl.php">http://www.linuxcommand.org/tlcl.php/tlcl.php</a></li>
+<li>MATLAB Installation Guide: <a href="https://ww2.mathworks.cn/matlabcentral/answers/98886-how-do-i-install-matlab-and-its-toolboxes">https://ww2.mathworks.cn/matlabcentral/answers/98886-how-do-i-install-matlab-and-its-toolboxes</a></li>
+<li>MATLAB GPU Guide: <a href="https://ww2.mathworks.cn/help/parallel-computing/gpu-computing-requirements.html">https://ww2.mathworks.cn/help/parallel-computing/gpu-computing-requirements.html</a></li>
 </ul>
               
             </div>
