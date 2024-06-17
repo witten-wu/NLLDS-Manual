@@ -1,7 +1,7 @@
 # GPU Docs
 Author: Yidu Wu
 
-Last updated on June 6, 2024 by Yidu
+Last updated on June 17, 2024 by Yidu
 
 Before using the workstation, if you have no experience in using clusters for computing, then we strongly recommend that you take a moment to read the contents of this manual.
 
