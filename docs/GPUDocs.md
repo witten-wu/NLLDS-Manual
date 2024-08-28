@@ -147,9 +147,9 @@ After connected, The left panel is your local file system and the right is the r
 
 Please make sure that you only upload files to these three paths, which you have the full access:
 
-- `/home/<your_username>`: Your home dir
-- `/BigData0`: Extra Disk (Reference Workstation Summary)
-- `/SSData0`: Extra Disk (Reference Workstation Summary)
+- `/home/<your_username>`: Your home dir (50GB quota, Ask me for more space If quota exceeded)
+- `/BigData0`: Extra Disk (Reference Workstation Summary) (please store your large files here)
+- `/SSData0`: Extra Disk (Reference Workstation Summary) (use it when /BigData0 disk full)
 
 ### For Linux/MaxOS Users
 
