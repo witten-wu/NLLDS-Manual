@@ -38,7 +38,7 @@ Before using the workstation, if you have no experience in using clusters for co
 
 | IP               | Port  | User Type      | Remark                                       |
 | ---------------- | ----- | -------------- | -------------------------------------------- |  
-| 137.189.158.26   | 22    | CUHK User      | Off-campus user need connect CUHK VPN first  |
+| 137.189.158.32   | 22    | CUHK User      | Off-campus user need connect CUHK VPN first  |
 | 8.219.66.9       | 6000  | Non-CUHK User  | Forwarded by Aliyun, latency may exist       |
 
 <!-- ```bash
