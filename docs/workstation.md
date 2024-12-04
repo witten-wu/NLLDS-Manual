@@ -1,14 +1,20 @@
-# GPU Docs
+# WORKSTATION Docs
 Author: Yidu Wu
 
-Last updated on June 17, 2024 by Yidu
+Last updated on Dec 4, 2024 by Yidu
 
 Before using the workstation, if you have no experience in using clusters for computing, then we strongly recommend that you take a moment to read the contents of this manual.
 
 ## Workstation Summary
-| Computing Nodes    | Detail                                    | RAM              |
+| Workstation               | Type     | Interface     | Location |
+| ------------------------- | -------- | ------------- | -------- |
+| Dell Precision 7960 Tower | GPU Node | SSH           | BMI      |      
+| HP Z8                     | CPU Node | SSH & Desktop | KKL 209  |          
+
+### 1. Dell Precision 7960 Tower
+| Computing Unit     | Detail                                    | RAM              |
 | ------------------ | ----------------------------------------- | ---------------- |
-| CPU                | [1x] Intel Xeon w7-3455 2.50 GHz 24C/48T  | 502GB            |
+| CPU                | [1x] Intel Xeon w7-3455 4.8GHz 24C/48T    | 502GB            |
 | GPU                | [1x] NVIDIA RTX A6000                     | 48GB             | 
 
 | Storage                   | Capacity  | Disk          | Mount          |
@@ -19,8 +25,8 @@ Before using the workstation, if you have no experience in using clusters for co
 
 | Other Configurations   | Remark                                        | 
 | ---------------------- | --------------------------------------------- | 
-| Network                | 1Gbps LAN connected to CUHK network           |
 | Operating System       | Ubuntu 22.04 LTS                              |
+| Network                | 1Gbps LAN connected to CUHK network           |
 
 | Packages pre-installed  | Version |
 | ------------------------| ------- | 
@@ -35,11 +41,43 @@ Before using the workstation, if you have no experience in using clusters for co
 | Git                     | 2.34.1  |
 | Vim                     | 8.2     |
 | Tmux                    | 3.2a    |
+| Docker                  | 27.2.1  |
 
 | IP               | Port  | User Type      | Remark                                       |
 | ---------------- | ----- | -------------- | -------------------------------------------- |  
-| 137.189.158.32   | 22    | CUHK User      | Off-campus user need connect CUHK VPN first  |
-| 8.219.66.9       | 6000  | Non-CUHK User  | Forwarded by Aliyun, latency may exist       |
+| 137.189.158.32   | 22    | BMI User       |                                              |
+| 8.219.66.9       | 6000  | Non-BMI User   | Forwarded by Aliyun, latency may exist       |        
+
+### 2. HP Z8
+| Computing Unit     | Detail                                    | RAM              |
+| ------------------ | ----------------------------------------- | ---------------- |
+| CPU                | [2x] Intel Xeon 5418Y 3.80GHz 48C/96T     | 256GB            |
+
+| Storage                            | Capacity  | Disk          | Mount          |
+| ---------------------------------- | --------- | ------------- | -------------- |                   
+| HP Z Turbo Drive Quad Pro TLC SSD  | 2TB       | /dev/nvme0n1  | / & /home      |
+| Z Turbo TLC SSD                    | 512GB     | /dev/nvme1n1  | /SSData0       |
+| 7200RPM SATA 3.5in Enterprise      | 8TB       | /dev/sda      | /BigData0      |
+
+| Other Configurations   | Remark                                        | 
+| ---------------------- | --------------------------------------------- | 
+| Operating System       | Ubuntu 22.04 LTS                              |
+| Network                | 1Gbps LAN connected to CUHK network           |
+
+| Packages pre-installed  | Version |
+| ------------------------| ------- | 
+| Conda                   | 24.1.2  |
+| GCC/G++                 | 11.4.0  |
+| Cmake                   | 3.22.1  |
+| Git                     | 2.34.1  |
+| Vim                     | 8.2     |
+| Tmux                    | 3.2a    |
+| Docker                  | 27.2.1  |
+
+| IP               | Port  | User Type                  | Remark                                       |
+| ---------------- | ----- | -------------------------- | -------------------------------------------- |  
+| 137.189.85.27    | 22    | Linguistic Department User |                                              |
+
 
 <!-- ```bash
 + ---------------------------------------------------------------------- +

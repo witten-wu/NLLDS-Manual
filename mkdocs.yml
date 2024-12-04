@@ -1,5 +1,5 @@
 site_name: NLL-Manual
 nav:
-  - NLLDS: index.md
-  - GPUDocs: GPUDocs.md
+  - NLL_DATASYSTEM: index.md
+  - NLL_WORKSTATION: workstation.md
 theme: readthedocs
