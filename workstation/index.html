@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>GPUDocs - NLL-Manual</title>
+    <title>NLL_WORKSTATION - NLL-Manual</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "GPUDocs";
-        var mkdocs_page_input_path = "GPUDocs.md";
+        var mkdocs_page_name = "NLL_WORKSTATION";
+        var mkdocs_page_input_path = "workstation.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -40,13 +40,19 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="..">NLLDS</a>
+                <li class="toctree-l1"><a class="reference internal" href="..">NLL_DATASYSTEM</a>
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">GPUDocs</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">NLL_WORKSTATION</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#workstation-summary">Workstation Summary</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-dell-precision-7960-tower">1. Dell Precision 7960 Tower</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-hp-z8">2. HP Z8</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a>
         <ul>
@@ -111,7 +117,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">GPUDocs</li>
+      <li class="breadcrumb-item active">NLL_WORKSTATION</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -120,15 +126,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="gpu-docs">GPU Docs</h1>
+                <h1 id="workstation-docs">WORKSTATION Docs</h1>
 <p>Author: Yidu Wu</p>
-<p>Last updated on June 17, 2024 by Yidu</p>
+<p>Last updated on Dec 4, 2024 by Yidu</p>
 <p>Before using the workstation, if you have no experience in using clusters for computing, then we strongly recommend that you take a moment to read the contents of this manual.</p>
 <h2 id="workstation-summary">Workstation Summary</h2>
 <table>
 <thead>
 <tr>
-<th>Computing Nodes</th>
+<th>Workstation</th>
+<th>Type</th>
+<th>Interface</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dell Precision 7960 Tower</td>
+<td>GPU Node</td>
+<td>SSH</td>
+<td>BMI</td>
+</tr>
+<tr>
+<td>HP Z8</td>
+<td>CPU Node</td>
+<td>SSH &amp; Desktop</td>
+<td>KKL 209</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-dell-precision-7960-tower">1. Dell Precision 7960 Tower</h3>
+<table>
+<thead>
+<tr>
+<th>Computing Unit</th>
 <th>Detail</th>
 <th>RAM</th>
 </tr>
@@ -136,7 +167,7 @@
 <tbody>
 <tr>
 <td>CPU</td>
-<td>[1x] Intel Xeon w7-3455 2.50 GHz 24C/48T</td>
+<td>[1x] Intel Xeon w7-3455 4.8GHz 24C/48T</td>
 <td>502GB</td>
 </tr>
 <tr>
@@ -185,12 +216,12 @@
 </thead>
 <tbody>
 <tr>
-<td>Network</td>
-<td>1Gbps LAN connected to CUHK network</td>
-</tr>
-<tr>
 <td>Operating System</td>
 <td>Ubuntu 22.04 LTS</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>1Gbps LAN connected to CUHK network</td>
 </tr>
 </tbody>
 </table>
@@ -246,6 +277,10 @@
 <td>Tmux</td>
 <td>3.2a</td>
 </tr>
+<tr>
+<td>Docker</td>
+<td>27.2.1</td>
+</tr>
 </tbody>
 </table>
 <table>
@@ -261,14 +296,135 @@
 <tr>
 <td>137.189.158.32</td>
 <td>22</td>
-<td>CUHK User</td>
-<td>Off-campus user need connect CUHK VPN first</td>
+<td>BMI User</td>
+<td></td>
 </tr>
 <tr>
 <td>8.219.66.9</td>
 <td>6000</td>
-<td>Non-CUHK User</td>
+<td>Non-BMI User</td>
 <td>Forwarded by Aliyun, latency may exist</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-hp-z8">2. HP Z8</h3>
+<table>
+<thead>
+<tr>
+<th>Computing Unit</th>
+<th>Detail</th>
+<th>RAM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>[2x] Intel Xeon 5418Y 3.80GHz 48C/96T</td>
+<td>256GB</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Storage</th>
+<th>Capacity</th>
+<th>Disk</th>
+<th>Mount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HP Z Turbo Drive Quad Pro TLC SSD</td>
+<td>2TB</td>
+<td>/dev/nvme0n1</td>
+<td>/ &amp; /home</td>
+</tr>
+<tr>
+<td>Z Turbo TLC SSD</td>
+<td>512GB</td>
+<td>/dev/nvme1n1</td>
+<td>/SSData0</td>
+</tr>
+<tr>
+<td>7200RPM SATA 3.5in Enterprise</td>
+<td>8TB</td>
+<td>/dev/sda</td>
+<td>/BigData0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Other Configurations</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operating System</td>
+<td>Ubuntu 22.04 LTS</td>
+</tr>
+<tr>
+<td>Network</td>
+<td>1Gbps LAN connected to CUHK network</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Packages pre-installed</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conda</td>
+<td>24.1.2</td>
+</tr>
+<tr>
+<td>GCC/G++</td>
+<td>11.4.0</td>
+</tr>
+<tr>
+<td>Cmake</td>
+<td>3.22.1</td>
+</tr>
+<tr>
+<td>Git</td>
+<td>2.34.1</td>
+</tr>
+<tr>
+<td>Vim</td>
+<td>8.2</td>
+</tr>
+<tr>
+<td>Tmux</td>
+<td>3.2a</td>
+</tr>
+<tr>
+<td>Docker</td>
+<td>27.2.1</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>IP</th>
+<th>Port</th>
+<th>User Type</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>137.189.85.27</td>
+<td>22</td>
+<td>Linguistic Department User</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -567,7 +723,7 @@ fprintf(&quot;GPU time consumption: %.6f seconds\n&quot;, gpu_time);
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="NLLDS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href=".." class="btn btn-neutral float-left" title="NLL_DATASYSTEM"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
