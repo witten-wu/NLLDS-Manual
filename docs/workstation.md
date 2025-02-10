@@ -43,10 +43,10 @@ Before using the workstation, if you have no experience in using clusters for co
 | Tmux                    | 3.2a    |
 | Docker                  | 27.2.1  |
 
-| IP               | Port  | User Type      | Remark                                       |
-| ---------------- | ----- | -------------- | -------------------------------------------- |  
-| 137.189.158.32   | 22    | BMI User       |                                              |
-| 8.219.66.9       | 6000  | Non-BMI User   | Forwarded by Aliyun, latency may exist       |        
+| IP               | Port  | User Type     | Remark                                         |
+| ---------------- | ----- | ------------- | ---------------------------------------------- |  
+| 137.189.158.32   | 22    | CUHK User     | Off-campus users should connect CUHK VPN first |
+| 8.219.66.9       | 6000  | Non-CUHK User | Forwarded by Aliyun, latency may exist         |        
 
 ### 2. HP Z8
 | Computing Unit     | Detail                                    | RAM              |
@@ -74,9 +74,9 @@ Before using the workstation, if you have no experience in using clusters for co
 | Tmux                    | 3.2a    |
 | Docker                  | 27.2.1  |
 
-| IP               | Port  | User Type                  | Remark                                       |
-| ---------------- | ----- | -------------------------- | -------------------------------------------- |  
-| 137.189.85.27    | 22    | Linguistic Department User |                                              |
+| IP               | Port  | User Type        | Remark                        |
+| ---------------- | ----- | ---------------- | ----------------------------- |  
+| 137.189.85.27    | 22    | All User         | Need 2FA Google Authenticator |
 
 
 <!-- ```bash
