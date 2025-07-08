@@ -1,4 +1,9 @@
 site_name: NLL-Manual
+plugins:
+  - search: {}
+  - encryptcontent:
+      password_inventory:
+        classified: 'NLL@Cuhk'
 nav:
   - NLL_DATASYSTEM: index.md
   - NLL_HPC: workstation.md

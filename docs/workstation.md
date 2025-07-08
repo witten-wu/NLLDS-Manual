@@ -1,3 +1,6 @@
+---
+level: classified
+---
 # Computing Resources
 Author: Yidu Wu
 
