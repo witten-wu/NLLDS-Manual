@@ -15,7 +15,7 @@ The NLLDS was built for the data collection and organization for Prof. Feng Gang
 
 The NLLDS is used for project management, experiment data collection and storage, and questionnaire management. It can be accessed from the public network.
 
-Here is an overview structure of our system:
+Here is an overview structure of our system: 
 
 ![](img/structure.png)
 
