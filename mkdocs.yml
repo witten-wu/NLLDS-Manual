@@ -1,5 +1,6 @@
 site_name: NLL-Manual
 nav:
   - NLL_DATASYSTEM: index.md
-  - NLL_WORKSTATION: workstation.md
+  - NLL_HPC: workstation.md
+  - QUALTRICS_MANUAL: qualtrics.md
 theme: readthedocs

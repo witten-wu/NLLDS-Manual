@@ -1,11 +1,24 @@
-# WORKSTATION Docs
+# Computing Resources
 Author: Yidu Wu
 
-Last updated on Dec 4, 2024 by Yidu
+Last updated on Jul 8, 2025 by Yidu
 
-Before using the workstation, if you have no experience in using clusters for computing, then we strongly recommend that you take a moment to read the contents of this manual.
+## Department HPC
+Our department provides students and staff with shared high-performance computing resources for large-scale research jobs.
 
-## Workstation Summary
+| GPU Server with 8x NVIDIA L40S |                                            |
+| ------------------------------ | ------------------------------------------ |
+| GPU          | [8x] NVIDIA L40S 48GB                                        |
+| CPU          | [2x] Intel Xeon Gold 6426Y, 16C/32T, 2.5 to 4.1 GHz, 37.5 MB |
+| RAM          | [8x] 32GB DDR5-4800 ECC RDIMM                                |
+| Server Model | Gigabyte G493-SB1                                            |
+| Motherboard  | MSB3-G40
+
+Before using the HPC, you should get the support from the cuhk central cluster.
+
+## Lab Workstation Summary
+In addition to the department HPC, we also have two workstations for daily lightweight jobs.
+
 | Workstation               | Type     | Interface     | Location |
 | ------------------------- | -------- | ------------- | -------- |
 | Dell Precision 7960 Tower | GPU Node | SSH           | BMI      |      
@@ -127,14 +140,14 @@ Before using the workstation, if you have no experience in using clusters for co
 + ---------------------------------+
 ``` -->
 
-## Getting Started
-This page gives minimum information to run a program on our computing cluster. If you are using the cluster for the first time, you should read this page carefully.
+### How to use lab workstation
+Please note that the following content only gives minimum information to run a program on our workstations. For guidance on using departmental high-performance computing resources, we will not explain in detail here, because HPC uses the slurm workload manager and you should get the support from the cuhk central cluster.
 
 ### Get Your Account
-Before you use the cluster, you should apply an account from our administrators. Please send an email to Yidu Wu ([yiduwu@cuhk.edu.hk](mailto:yiduwu@cuhk.edu.hk)) with your **name**, **position**, and **expected study years (for students)**.
+Before you use the workstation, you should apply an account from our administrators. Please send an email to Yidu Wu ([yiduwu@cuhk.edu.hk](mailto:yiduwu@cuhk.edu.hk)) with your **name**, **position**, and **expected study years (for students)**.
 
 ### If you are new to Linux
-Unfortunately, our cluster is running Linux operating system. If you have never used Linux before, it may be pretty uncomfortable for you to use a new operating system by command line but not GUI. We understand your feeling, but please try to get familiar with Linux commands on a virtual machine before moving on.
+Unfortunately, our workstation is running Linux operating system. If you have never used Linux before, it may be pretty uncomfortable for you to use a new operating system by command line but not GUI. We understand your feeling, but please try to get familiar with Linux commands on a virtual machine before moving on.
 
 The following document assumes you have experience with Linux.
 
@@ -148,7 +161,7 @@ Here is the URL to download `Xshell` and `Xftp`: https://www.netsarang.com/en/fr
 
 #### Connect Example (XShell)
 
-After installation we run Xshell, the first thing we need to do is to create a new session to connect to our cluster. Here is the configuration:
+After installation we run Xshell, the first thing we need to do is to create a new session to connect to our workstation. Here is the configuration:
 
 - `Protocal`: SSH
 - `Host`: IP Address (Reference Workstation Summary)
@@ -191,7 +204,7 @@ Please make sure that you only upload files to these three paths, which you have
 
 ### For Linux/MaxOS Users
 
-The cluster can log through `SSH`. On Linux or macOS terminal, input the following command to login.
+The workstation can log through `SSH`. On Linux or macOS terminal, input the following command to login.
 ```bash
 $ ssh <username>@<ip> -p <port>
 ```
@@ -207,7 +220,7 @@ $ passwd
 Please note that for security reasons, all users do not have `sudo` permissions by default. It means that you cannot install the required packages by raising to `root` privileges with the `sudo` command! Nevertheless, you can still install the packages you need by the way of compiling the source code, although this will take some effort and requires some expertise in linux. Alternatively, you can contact the administrator to install the packages for you.
 
 ### Run your Programme on our Compute Nodes
-Since we only have 1 GPU right now, we are holding off on using e.g. SLURM resource management software to manage our cluster. Instead of it, at this stage we consider a negotiated allocation to use our compute nodes. An easy way to do this is to book it directly in the DingTalk calendar! Before using the cluster you should organize your schedule ahead of time and add it to our DingTalk calendar, making sure not to cross over with other people's schedules. Please use computing nodes strictly according to the calendar schedule. If there are indeed urgent tasks that need to be prioritized, please negotiate with the user who owns the current schedule.
+Since we only have 1 GPU right now, we are holding off on using e.g. SLURM resource management software to manage our workstation. Instead of it, at this stage we consider a negotiated allocation to use our compute nodes. An easy way to do this is to book it directly in the DingTalk calendar! Before using the workstation you should organize your schedule ahead of time and add it to our DingTalk calendar, making sure not to cross over with other people's schedules. Please use computing nodes strictly according to the calendar schedule. If there are indeed urgent tasks that need to be prioritized, please negotiate with the user who owns the current schedule.
 
 #### Check the resources
 Before running the program, check the GPU to ensure there are sufficient computing resources, input the following command.
@@ -266,9 +279,9 @@ Start a background terminal session using `tmux`.Simply run `tmux`, you can get 
 
 All of the above assumes you are using the python; if you are a MATLAB user, please read the following carefully.
 
-We have already pre-installed the MATLAB (R2024a) in our cluster. Unfortunately, we are unable to share MATLAB licences within the cluster due to MATLAB's strict licensing requirements. And it's also not possible to sign in with multiple user accounts on the same server instance, whether it's a real or virtual server. This means that only one user is allowed to use MATLAB in our cluster at any given time, and if other users need to use it they need to queue up, so I recommend that you schedule a MATLAB appointment in our DingTalk calendar just like GPU before.
+We have already pre-installed the MATLAB (R2024a) in our workstation. Unfortunately, we are unable to share MATLAB licences within the workstation due to MATLAB's strict licensing requirements. And it's also not possible to sign in with multiple user accounts on the same server instance, whether it's a real or virtual server. This means that only one user is allowed to use MATLAB in our workstation at any given time, and if other users need to use it they need to queue up, so I recommend that you schedule a MATLAB appointment in our DingTalk calendar just like GPU before.
 
-I recommend using the MATLAB resources in our cluster only when you need to use the GPU to assist in computing MATLAB program, because in this way the occupancy time of MATLAB is consistent with the occupancy time of the GPU. For other tasks, you can do it on your own computer with CPU.
+I recommend using the MATLAB resources in our workstation only when you need to use the GPU to assist in computing MATLAB program, because in this way the occupancy time of MATLAB is consistent with the occupancy time of the GPU. For other tasks, you can do it on your own computer with CPU.
 
 Nevertheless, you can still use it without restriction by installing a separate MATLAB program in your own home dir. This assumes that you have a MATLAB licence and you can activate it with your own licence. 
 
@@ -278,7 +291,7 @@ Before using it you should get the username/password of our MATLAB user from the
 
 Please note that if you need to install any third-party tools, please contact the administrator!
 
-Please also note that the pre-installed MATLAB in our cluster is tied to our administrator's licence. If you encounter MATLAB updates or verifications from time to time, please contact administrator for assistance.
+Please also note that the pre-installed MATLAB in our workstation is tied to our administrator's licence. If you encounter MATLAB updates or verifications from time to time, please contact administrator for assistance.
 
 We will give a running example of MATLAB below.
 
@@ -322,7 +335,7 @@ gpu_time = time.time() - start
 print(f"GPU time consumption: {gpu_time:.6f} second")
 ```
 
-- The first thing we need to do is to upload this python file to our GPU cluster, We've already covered how to upload files with XFtp earlier on.
+- The first thing we need to do is to upload this python file to our GPU workstation, We've already covered how to upload files with XFtp earlier on.
 
 - Supposed I have already uploaded the python file to my home path. Now we can check it.
 
@@ -401,7 +414,7 @@ gpu_time = toc;
 fprintf("GPU time consumption: %.6f seconds\n", gpu_time);
 ```
 
-- Login to our cluster as a MATLAB user. You can switch to it by command `su matlab`. Then type the password got from our administrator.
+- Login to our workstation as a MATLAB user. You can switch to it by command `su matlab`. Then type the password got from our administrator.
 
 ![](img/Xshell10.png)
 
@@ -415,13 +428,14 @@ fprintf("GPU time consumption: %.6f seconds\n", gpu_time);
 
 Then we can see the resuls.
 
-**Now you should know how to run your programme in our cluster.**
+**Now you should know how to run your programme in our workstation.**
 
 ## Quick Reference
 ### Contact
-The computing cluster and the storage server are managed by Yidu Wu ([yiduwu@cuhk.edu.hk](mailto:yiduwu@cuhk.edu.hk)).
+The workstation and the storage server are managed by Yidu Wu ([yiduwu@cuhk.edu.hk](mailto:yiduwu@cuhk.edu.hk)).
 
 ### Useful Links
+- CUHK Central Cluster: <https://www.cuhk.edu.hk/itsc/hpc/index.html>
 - CUHK VPN: <https://www.itsc.cuhk.edu.hk/all-it/wifi-and-network/cuhk-vpn/>
 - Conda User Guide: <https://docs.conda.io/projects/conda/en/latest/user-guide/index.html>
 - Tmux User Guide: <https://hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/>
