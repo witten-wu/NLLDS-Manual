@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>QUALTRICS_MANUAL - NLL-Manual</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "QUALTRICS_MANUAL";
+        var mkdocs_page_input_path = "qualtrics.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> NLL-Manual
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">NLL_DATASYSTEM</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../workstation/">NLL_WORKSTATION</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">QUALTRICS_MANUAL</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#cuhk-login">CUHK Login</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#create-project">Create Project</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#create-a-survey-project-from-scratch">Create a Survey Project from Scratch</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#prepare-survey">Prepare Survey</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#add-edit-question">Add / Edit Question</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#delete-question">Delete Question</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#copy-question-from-current-survey">Copy Question from Current Survey</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#import-question-from-another-survey-library">Import Question from Another Survey / Library</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#move-question">Move Question</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#add-page-break">Add Page Break</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#add-skip-logic">Add Skip Logic</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#add-display-logic">Add Display Logic</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#auto-number-questions">Auto-Number Questions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#show-progress-bar-and-change-next-back-button-text">Show Progress Bar and Change Next / Back Button Text</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#preview-survey">Preview Survey</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#collaborate-survey">Collaborate Survey</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#distribute-survey">Distribute Survey</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#set-survey-availability">Set Survey Availability</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#activate-survey">Activate Survey</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#close-survey">Close Survey</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#data-analysis-and-results">Data &amp; Analysis and Results</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#view-recorded-responses">View Recorded Responses</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#delete-recorded-response">Delete Recorded Response</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#view-responses-in-progress">View Responses in Progress</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#delete-response-in-progress">Delete Response in Progress</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#download-response-data">Download Response Data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#view-default-report">View Default Report</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#add-a-filter-by-question">Add a Filter by Question</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#export-report">Export Report</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reference">Reference</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">NLL-Manual</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">QUALTRICS_MANUAL</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="qualtrics-manual">Qualtrics Manual</h1>
+<h2 id="cuhk-login">CUHK Login</h2>
+<p>Visit https://cuhk.qualtrics.com and login using @cuhk.edu.hk or @link.cuhk.edu.hk accounts and OnePass Password</p>
+<p><img alt="" src="../qualtrics_img/1.png" /></p>
+<ul>
+<li>Qualtrics Online Tutorials: https://www.qualtrics.com/support</li>
+<li>Qualtrics Support: http://www.cuhk.edu.hk/eLearning/qualtrics/Qualtrics-ContactSupport-CUHK.pdf</li>
+</ul>
+<p>After logged in. Qualtrics will display the Qualtrics homepage.</p>
+<p><img alt="" src="../qualtrics_img/2.png" /></p>
+<h2 id="create-project">Create Project</h2>
+<p>To create a new survey, click the Create a new project button at the Qualtrics homepage.</p>
+<p><img alt="" src="../qualtrics_img/3.png" /></p>
+<p>It will direct to the Create a project page. You can create a Survey Project from scratch, or create a project by using the survey templates provided by Qualtrics. Here, we will focus on creating a Survey Project from scratch.</p>
+<h3 id="create-a-survey-project-from-scratch">Create a Survey Project from Scratch</h3>
+<p>It allows you to create a survey from scratch and add questions to the survey one by one.</p>
+<ol>
+<li>Select <strong>Survey</strong> at the <strong>Create a project</strong> page.</li>
+<li>Click the <strong>Get started</strong> button.</li>
+<li>Enter a <strong>Name</strong> for the survey project.</li>
+<li>Click the <strong>Create project</strong> button.</li>
+<li>It will direct to the <strong>Edit Survey</strong> page, and you can add questions to the survey right away.</li>
+</ol>
+<p><img alt="" src="../qualtrics_img/4.png" /></p>
+<h2 id="prepare-survey">Prepare Survey</h2>
+<p>To work on a survey, click the Menu button and select Projects.</p>
+<p><img src="qualtrics_img/5.png" width="300" height="150"></p>
+<p>It will direct to the Projects page. You can click on the survey name, or click the “…” button and select
+Edit survey at the Projects page.</p>
+<p><img alt="" src="../qualtrics_img/6.png" /></p>
+<h3 id="add-edit-question">Add / Edit Question</h3>
+<ol>
+<li>Click the <strong>Add new question</strong> button.</li>
+<li>A dropdown will display. You can select a question type from the dropdown. A question of the selected question type will be added to the survey.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/7.png" width="300" height="">
+</div>
+
+<ol>
+<li>If it is not the question type you need, you can change it by clicking the Question type dropdown at the Edit question pane at the left hand side.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/8.png" width="300" height="">
+</div>
+
+<ol>
+<li>Click on the area Click to write the question text to enable the text editor and type the question text there.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/9.png">
+</div>
+
+<ol>
+<li>If you want to format the question text, you can click on the <strong>Rich Content Editor…</strong> button.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/10.png">
+</div>
+
+<ol>
+<li>Format the text as you prefer. When you finished, click anywhere outside the text editor to close the editor.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/11.png">
+</div>
+
+<ol>
+<li>If the question is a multiple choice, it will have 3 number of choices (answer options) by default. You can enable Use suggested choices at Edit question pane. Qualtrics would suggest a list of choices to your question. If you find the choices are not appropriate, you may change them by clicking the dropdown and select an appropriate type.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/12.png" width="300">
+</div>
+
+<ol>
+<li>If you want to change the number of choices, you can click the “-” or “+” button to add or remove choices, or select Remove Choice to delete particular choice.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/13.png">
+</div>
+
+<ol>
+<li>To set the question as mandatory, enable Add requirements at Edit question pane and check the Force response checkbox.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/14.png" width="300">
+</div>
+
+<ol>
+<li>Some question types may have more options on validation checking. You may enable Add validation at Edit question pane and select the appropriate criteria (e.g. you may require the answer must be a number and must be within a range from 1 to 10). Note: The options available in Add validation depend on the Question type you select.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/15.png" width="300">
+</div>
+
+<h3 id="delete-question">Delete Question</h3>
+<ol>
+<li>Hover the mouse on the question, click the red minus (Remove Question) button. </li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/16.png" width="">
+</div>
+
+<ol>
+<li>You can also click the “…” button and select Delete to delete the question.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/17.png" width="">
+</div>
+
+<ol>
+<li>The question will be moved to the Trash at the bottom of the page.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/18.png" width="">
+</div>
+
+<ol>
+<li>Select the question. Click the Permanently delete button at Edit question pane to remove the question from the trash block or click the Restore button if you want to get back the question.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/19.png" width="300">
+</div>
+
+<ol>
+<li>If you do not need the questions anymore, you can click the <strong>Empty trash</strong> button to remove all the questions from Trash.</li>
+</ol>
+<h3 id="copy-question-from-current-survey">Copy Question from Current Survey</h3>
+<ol>
+<li>Click the “…” button and select Copy.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/20.png">
+</div>
+
+<ol>
+<li>The question is copied and is placed below the original question.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/21.png">
+</div>
+
+<h3 id="import-question-from-another-survey-library">Import Question from Another Survey / Library</h3>
+<ol>
+<li>
+<p>Click the <strong>Import from library</strong> button at the bottom of the question block.</p>
+</li>
+<li>
+<p>The Question Library dialog will appear on the right menu. Select Copy from Existing Survey.</p>
+</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/22.png" width="300">
+</div>
+
+<ol>
+<li>Select a survey.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/23.png" width="300">
+</div>
+
+<ol>
+<li>Select the survey question(s) and click the Import question button.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/24.png" width="300">
+</div>
+
+<ol>
+<li>A copy of the selected question will be added to the survey as the last question.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/25.png">
+</div>
+
+<h3 id="move-question">Move Question</h3>
+<ol>
+<li>Click the “…” button and select Move question.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/26.png">
+</div>
+
+<ol>
+<li>The Move question to dialog will appear. Click the Position dropdown to select the destination of the question. If you select Top of block or Bottom of block, no further criteria is required.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/27.png">
+</div>
+
+<ol>
+<li>If you select Before or After, you are required to select the moving question should be place before or after which Question.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/28.png">
+</div>
+
+<ol>
+<li>Click the Confirm button.</li>
+<li>Q3 is now placed before Q1.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/29.png">
+</div>
+
+<ol>
+<li>You can also hover the mouse on the question, drag and drop the question to the new position.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/30.png">
+</div>
+
+<h3 id="add-page-break">Add Page Break</h3>
+<ol>
+<li>Click the “…” button and select Add page break.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/31.png">
+</div>
+
+<ol>
+<li>A page break will be added after the question.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/32.png">
+</div>
+
+<ol>
+<li>You can also hover the mouse on the space between two questions, the Add page break link will appear. Click on the link and a page break will be added between the questions.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/33.png">
+</div>
+
+<h3 id="add-skip-logic">Add Skip Logic</h3>
+<ol>
+<li>Select the question, scroll to the bottom of Edit question pane and click the Skip logic link.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/34.png" width="300">
+</div>
+
+<ol>
+<li>The Skip logic dialog will appear. Apply the rule by selecting the required criteria.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/35.png">
+</div>
+
+<ol>
+<li>Click the Confirm button.</li>
+<li>The details of the skip logic will be displayed.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/36.png">
+</div>
+
+<h3 id="add-display-logic">Add Display Logic</h3>
+<ol>
+<li>Select the question, scroll to the bottom of Edit question pane and click the Display logic link.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/37.png" width="300">
+</div>
+
+<ol>
+<li>The Display Logic dialog will appear. Apply the rule by selecting the required criteria.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/38.png" width="">
+</div>
+
+<ol>
+<li>Click the Save button.</li>
+<li>The details of the display logic will be displayed.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/39.png" width="">
+</div>
+
+<h3 id="auto-number-questions">Auto-Number Questions</h3>
+<ol>
+<li>Click the Tools dropdown and select Auto-number questions.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/40.png" width="300">
+</div>
+
+<ol>
+<li>The Auto-Number Questions dialog will appear. Select the number format you prefer for your survey (e.g. Sequential Numbering).</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/41.png" width="400">
+</div>
+
+<ol>
+<li>The screen will refresh, and the question numbers will be re-ordered.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/42.png" width="">
+</div>
+
+<h3 id="show-progress-bar-and-change-next-back-button-text">Show Progress Bar and Change Next / Back Button Text</h3>
+<ol>
+<li>Click the Look &amp; feel button at the left side of the Survey page.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/43.png" width="200">
+</div>
+
+<ol>
+<li>The Look and feel page will display. Select General, click the Progress Bar dropdown and select the format of progress bar.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/44.png" width="400">
+</div>
+
+<ol>
+<li>Click the Next Button Text dropdown. Select My Library &gt; New Message…</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/45.png" width="">
+</div>
+
+<ol>
+<li>The Create a New Message dialog will appear. Fill in the Description and the body of the text message.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/46.png" width="">
+</div>
+
+<ol>
+<li>Click the Save button to close the dialog.</li>
+<li>It is the same for Previous Button Text.</li>
+<li>Click the Apply button.</li>
+<li>Click the Builder button to go back to the Survey page.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/47.png" width="150">
+</div>
+
+<h3 id="preview-survey">Preview Survey</h3>
+<ol>
+<li>Click the Preview button.</li>
+<li>A new web tab window will appear, showing the preview of the survey. The left side displays the view for a computer, and the right side displays the view for a smart device.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/48.png" width="">
+</div>
+
+<ol>
+<li>Click the Tools dropdown and select Scan QR code.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/49.png" width="150">
+</div>
+
+<ol>
+<li>The QR Code dialog will appear. Scan the QR code with your mobile device to display the survey preview on the device. Click the Close button to close the dialog.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/50.png" width="150">
+</div>
+
+<h3 id="collaborate-survey">Collaborate Survey</h3>
+<p>Important Note: If you want to share a survey with a colleague, whom does not have a Qualtrics account, you must ask him/her to activate his/her account first before you do the sharing. Otherwise you and your colleague would come across some unexpected problems.</p>
+<ol>
+<li>At the Survey page, click the Tools dropdown and select Collaborate.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/51.png" width="150">
+</div>
+
+<ol>
+<li>The Collaborate on Project dialog will appear. Enter the user’s username in the textbox.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/52.png" width="">
+</div>
+
+<ol>
+<li>Select the username from the search result. You must share your survey to a valid Qualtrics user (i.e. you can find the name from the search result and the username must have a suffix #cuhk).</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/53.png" width="">
+</div>
+
+<ol>
+<li>Click the Add Selected button.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/54.png" width="">
+</div>
+
+<ol>
+<li>The Collaborate with dialog will appear. Click the Invite button. It will send an email to notify the user that you want to collaborate a survey with him/her.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/55.png" width="500">
+</div>
+
+<ol>
+<li>The selected user will be listed in the table below. Check the checkboxes to share different rights to the user.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/56.png" width="">
+</div>
+
+<ol>
+<li>Click the Save button.</li>
+</ol>
+<h2 id="distribute-survey">Distribute Survey</h2>
+<p>A survey must be active before you can collect data from respondents. An active survey would have a survey link, you can send the survey link to the respondents through email. You can also use other social media to distribute your survey to the respondents.</p>
+<h3 id="set-survey-availability">Set Survey Availability</h3>
+<ol>
+<li>Click the Survey options button at the Survey page.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/57.png" width="200">
+</div>
+
+<ol>
+<li>The Options page will display. Select Responses from the Options pane.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/58.png" width="300">
+</div>
+
+<ol>
+<li>Check the Set specific start and expiration date checkbox at Survey availability.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/59.png" width="">
+</div>
+
+<ol>
+<li>Click the Edit survey availability button.</li>
+<li>The Edit survey availability dialog will appear. Update the Start date, Start time, Expiration date and Expiration time as you need.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/60.png" width="500">
+</div>
+
+<ol>
+<li>Click the Save changes button.</li>
+<li>Click the Builder button to go back to the Survey page.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/61.png" width="150">
+</div>
+
+<h3 id="activate-survey">Activate Survey</h3>
+<ol>
+<li>At Survey page, click the Publish button.</li>
+<li>The Publish Survey dialog will appear. Click the Publish button.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/62.png" width="">
+</div>
+
+<ol>
+<li>The Survey Activated dialog will appear. The survey link is displayed in the dialog. You may copy the link and pass it to your target respondents. Click the Okay button.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/63.png" width="">
+</div>
+
+<ol>
+<li>Once the survey is activated, you can always go to the Distributions page to retrieve the survey link. Click the Distributions tab.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/64.png" width="">
+</div>
+
+<ol>
+<li>It will direct to the Distributions page. Click Anonymous link at the left panel of the page.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/65.png" width="300">
+</div>
+
+<ol>
+<li>The page will display the survey link there.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/66.png" width="">
+</div>
+
+<h3 id="close-survey">Close Survey</h3>
+<ol>
+<li>At Distributions page, click the Pause response collection button.</li>
+<li>The Pause response collection dialog will appear. Select the option for the unfinished survey sessions.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/67.png" width="500">
+</div>
+
+<h2 id="data-analysis-and-results">Data &amp; Analysis and Results</h2>
+<p>When a survey started collecting responses, you can see the response data right away.</p>
+<h3 id="view-recorded-responses">View Recorded Responses</h3>
+<ol>
+<li>Click the Data &amp; Analysis tab</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/68.png" width="">
+</div>
+
+<ol>
+<li>The Data &amp; Analysis page display a list of recorded (completed) responses by default.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/69.png" width="">
+</div>
+
+<ol>
+<li>Click the “…” button and select View Response to view the details of the response.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/70.png" width="">
+</div>
+
+<ol>
+<li>The Recorded dialog will appear, showing the details of the response.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/71.png" width="500">
+</div>
+
+<ol>
+<li>Click the Close button to close the dialog.</li>
+</ol>
+<h3 id="delete-recorded-response">Delete Recorded Response</h3>
+<ol>
+<li>Check the checkbox next to the response record. Click the Delete button to delete a response.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/72.png" width="">
+</div>
+
+<ol>
+<li>The Delete Responses dialog will appear. Check the I am sure I want to delete 1 response checkbox. Click the Delete 1 response button to confirm the action.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/73.png" width="400">
+</div>
+
+<h3 id="view-responses-in-progress">View Responses in Progress</h3>
+<ol>
+<li>At Data &amp; Analysis page, click the Recorded responses dropdown and select Responses in progress.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/74.png" width="200">
+</div>
+
+<ol>
+<li>The page will display a list of responses in progress (not completed responses).</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/75.png" width="">
+</div>
+
+<ol>
+<li>Click on a Survey Session ID link to view the details of the response.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/76.png" width="">
+</div>
+
+<ol>
+<li>The Respondent &gt; Partial Response dialog will appear, showing the details of the response.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/77.png" width="500">
+</div>
+
+<ol>
+<li>Click the Close button to close the dialog.</li>
+</ol>
+<h3 id="delete-response-in-progress">Delete Response in Progress</h3>
+<ol>
+<li>Check the checkbox next to the response record, click the Delete button to delete a response.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/78.png" width="">
+</div>
+
+<ol>
+<li>The Delete Responses in Progress dialog will appear. Check the I am sure I want to delete 1 response checkbox. Click the Delete 1 response button to confirm the action.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/79.png" width="400">
+</div>
+
+<h3 id="download-response-data">Download Response Data</h3>
+<ol>
+<li>At the Recorded Responses page, click the Export &amp; Import dropdown and select Export Data….</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/80.png" width="200">
+</div>
+
+<ol>
+<li>The Download a data table dialog will appear.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/81.png" width="500">
+</div>
+
+<ol>
+<li>Select a file format to download the data with the selected format, e.g. Excel.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/82.png" width="">
+</div>
+
+<ol>
+<li>Check if Use choice text checkbox is checked. Click the Download button.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/83.png" width="600">
+</div>
+
+<ol>
+<li>In the Manage Downloads dialog, click the Download link to save the file in a local PC.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/84.png" width="600">
+</div>
+
+<ol>
+<li>Click the Close button to close the dialog.</li>
+</ol>
+<h3 id="view-default-report">View Default Report</h3>
+<ol>
+<li>Click the Results tab.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/85.png" width="">
+</div>
+
+<ol>
+<li>It will direct to the Results page. The default report is displayed, and the results of questions are displayed one by one.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/86.png" width="">
+</div>
+
+<ol>
+<li>You can go to a specific question by selecting the question text. Add a Filter by Question</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/87.png" width="">
+</div>
+
+<h3 id="add-a-filter-by-question">Add a Filter by Question</h3>
+<ol>
+<li>Click the Add Filter dropdown and select the question text.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/88.png" width="300">
+</div>
+
+<ol>
+<li>The filter rule will be displayed. Select an operation from the Select Operator dropdown and select the choice from the Select Operand dropdown.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/89.png" width="500">
+</div>
+
+<ol>
+<li>The rule would be displayed, and the report will refresh accordingly to show the latest results according to the rule applied.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/90.png" width="400">
+</div>
+
+<h3 id="export-report">Export Report</h3>
+<ol>
+<li>Click the Share Report dropdown, and select the report format, including PDF Document, Word Document, PowerPoint Slides or CSV (Comma Separated) (spreadsheet).</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/91.png" width="200">
+</div>
+
+<ol>
+<li>The Export Report dialog will appear. You can change your report format by clicking on the tabs of each report format and check/uncheck the checkbox to select which question(s) to be exported.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/92.png" width="500">
+</div>
+
+<ol>
+<li>Click the Export Pages button.</li>
+<li>The Download Previous Exports… dialog will appear. Click the Download link to collect the report.</li>
+</ol>
+<div style="margin-left: 2em;">
+    <img src="qualtrics_img/93.png" width="600">
+</div>
+
+<ol>
+<li>Click the Done button to close the dialog.</li>
+</ol>
+<h2 id="reference">Reference</h2>
+<ul>
+<li>Qualtrics: <a href="https://www.qualtrics.com/support/survey-platform/getting-started/survey-platform-overview/">https://www.qualtrics.com/support/survey-platform/getting-started/survey-platform-overview/</a></li>
+<li>Qualtrics HKUST: <a href="https://itsc.hkust.edu.hk/sites/default/files/site-files/qualtrics/Qualtrics_IntroductionToQualtrics_202407.pdf">https://itsc.hkust.edu.hk/sites/default/files/site-files/qualtrics/Qualtrics_IntroductionToQualtrics_202407.pdf</a></li>
+<li>Qualtrics CUHK ITSC: <a href="https://www.itsc.cuhk.edu.hk/all-it/business-applications/qualtrics/">https://www.itsc.cuhk.edu.hk/all-it/business-applications/qualtrics/</a></li>
+<li>Qualtrics CUHK: <a href="https://cuhk-edt.knowledgeowl.com/docs/qualtrics-overview">https://cuhk-edt.knowledgeowl.com/docs/qualtrics-overview</a></li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../workstation/" class="btn btn-neutral float-left" title="NLL_WORKSTATION"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../workstation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
