@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>NLL_WORKSTATION - NLL-Manual</title>
+    <title>NLL_HPC - NLL-Manual</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "NLL_WORKSTATION";
+        var mkdocs_page_name = "NLL_HPC";
         var mkdocs_page_input_path = "workstation.md";
         var mkdocs_page_url = null;
       </script>
@@ -44,18 +44,18 @@
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">NLL_WORKSTATION</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">NLL_HPC</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#workstation-summary">Workstation Summary</a>
+    <li class="toctree-l2"><a class="reference internal" href="#department-hpc">Department HPC</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#lab-workstation-summary">Lab Workstation Summary</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#1-dell-precision-7960-tower">1. Dell Precision 7960 Tower</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#2-hp-z8">2. HP Z8</a>
     </li>
-        </ul>
+    <li class="toctree-l3"><a class="reference internal" href="#how-to-use-lab-workstation">How to use lab workstation</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a>
-        <ul>
     <li class="toctree-l3"><a class="reference internal" href="#get-your-account">Get Your Account</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#if-you-are-new-to-linux">If you are new to Linux</a>
@@ -121,7 +121,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">NLL_WORKSTATION</li>
+      <li class="breadcrumb-item active">NLL_HPC</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -130,11 +130,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="workstation-docs">WORKSTATION Docs</h1>
+                <h1 id="lab-computing-resources">Lab Computing Resources</h1>
 <p>Author: Yidu Wu</p>
-<p>Last updated on Dec 4, 2024 by Yidu</p>
-<p>Before using the workstation, if you have no experience in using clusters for computing, then we strongly recommend that you take a moment to read the contents of this manual.</p>
-<h2 id="workstation-summary">Workstation Summary</h2>
+<p>Last updated on Jul 8, 2025 by Yidu</p>
+<h2 id="department-hpc">Department HPC</h2>
+<table>
+<thead>
+<tr>
+<th>GPU Server with 8x NVIDIA L40S</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPU</td>
+<td>[8x] NVIDIA L40S 48GB</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>[2x] Intel Xeon Gold 6426Y, 16C/32T, 2.5 to 4.1 GHz, 37.5 MB</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>[8x] 32GB DDR5-4800 ECC RDIMM</td>
+</tr>
+<tr>
+<td>Server Model</td>
+<td>Gigabyte G493-SB1</td>
+</tr>
+<tr>
+<td>Motherboard</td>
+<td>MSB3-G40</td>
+</tr>
+</tbody>
+</table>
+<p>Before using the HPC, you should get the support from the cuhk central cluster.</p>
+<h2 id="lab-workstation-summary">Lab Workstation Summary</h2>
+<p>In addition to the department HPC, we also have two workstations for daily lightweight jobs.</p>
 <table>
 <thead>
 <tr>
@@ -480,12 +512,12 @@
 + ---------------------------------+
 ``` -->
 
-<h2 id="getting-started">Getting Started</h2>
-<p>This page gives minimum information to run a program on our computing cluster. If you are using the cluster for the first time, you should read this page carefully.</p>
+<h3 id="how-to-use-lab-workstation">How to use lab workstation</h3>
+<p>Please note that the following content only gives minimum information to run a program on our workstations. For guidance on using departmental high-performance computing resources, we will not explain in detail here, because HPC uses the slurm workload manager and you should get the support from the cuhk central cluster.</p>
 <h3 id="get-your-account">Get Your Account</h3>
-<p>Before you use the cluster, you should apply an account from our administrators. Please send an email to Yidu Wu (<a href="mailto:yiduwu@cuhk.edu.hk">yiduwu@cuhk.edu.hk</a>) with your <strong>name</strong>, <strong>position</strong>, and <strong>expected study years (for students)</strong>.</p>
+<p>Before you use the workstation, you should apply an account from our administrators. Please send an email to Yidu Wu (<a href="mailto:yiduwu@cuhk.edu.hk">yiduwu@cuhk.edu.hk</a>) with your <strong>name</strong>, <strong>position</strong>, and <strong>expected study years (for students)</strong>.</p>
 <h3 id="if-you-are-new-to-linux">If you are new to Linux</h3>
-<p>Unfortunately, our cluster is running Linux operating system. If you have never used Linux before, it may be pretty uncomfortable for you to use a new operating system by command line but not GUI. We understand your feeling, but please try to get familiar with Linux commands on a virtual machine before moving on.</p>
+<p>Unfortunately, our workstation is running Linux operating system. If you have never used Linux before, it may be pretty uncomfortable for you to use a new operating system by command line but not GUI. We understand your feeling, but please try to get familiar with Linux commands on a virtual machine before moving on.</p>
 <p>The following document assumes you have experience with Linux.</p>
 <h3 id="for-windows-users">For Windows Users</h3>
 <p>To access a Linux server on Windows, you need to install software through <strong>SSH</strong> and <strong>SFTP</strong>. You can try out the following software.</p>
@@ -495,7 +527,7 @@
 </ul>
 <p>Here is the URL to download <code>Xshell</code> and <code>Xftp</code>: https://www.netsarang.com/en/free-for-home-school/ . Please note that this is free, no purchase required.</p>
 <h4 id="connect-example-xshell">Connect Example (XShell)</h4>
-<p>After installation we run Xshell, the first thing we need to do is to create a new session to connect to our cluster. Here is the configuration:</p>
+<p>After installation we run Xshell, the first thing we need to do is to create a new session to connect to our workstation. Here is the configuration:</p>
 <ul>
 <li><code>Protocal</code>: SSH</li>
 <li><code>Host</code>: IP Address (Reference Workstation Summary)</li>
@@ -526,7 +558,7 @@
 <li><code>/SSData0</code>: Extra Disk (Reference Workstation Summary) (use it when /BigData0 disk full)</li>
 </ul>
 <h3 id="for-linuxmaxos-users">For Linux/MaxOS Users</h3>
-<p>The cluster can log through <code>SSH</code>. On Linux or macOS terminal, input the following command to login.</p>
+<p>The workstation can log through <code>SSH</code>. On Linux or macOS terminal, input the following command to login.</p>
 <pre><code class="language-bash">$ ssh &lt;username&gt;@&lt;ip&gt; -p &lt;port&gt;
 </code></pre>
 <p>After a successful connection, the server will prompt you to enter a password. Please enter the password which you got from administrators at this time. There will be no response on the interface when you enter the password, but the password has already been entered.</p>
@@ -537,7 +569,7 @@
 <h3 id="package-installation">Package Installation</h3>
 <p>Please note that for security reasons, all users do not have <code>sudo</code> permissions by default. It means that you cannot install the required packages by raising to <code>root</code> privileges with the <code>sudo</code> command! Nevertheless, you can still install the packages you need by the way of compiling the source code, although this will take some effort and requires some expertise in linux. Alternatively, you can contact the administrator to install the packages for you.</p>
 <h3 id="run-your-programme-on-our-compute-nodes">Run your Programme on our Compute Nodes</h3>
-<p>Since we only have 1 GPU right now, we are holding off on using e.g. SLURM resource management software to manage our cluster. Instead of it, at this stage we consider a negotiated allocation to use our compute nodes. An easy way to do this is to book it directly in the DingTalk calendar! Before using the cluster you should organize your schedule ahead of time and add it to our DingTalk calendar, making sure not to cross over with other people's schedules. Please use computing nodes strictly according to the calendar schedule. If there are indeed urgent tasks that need to be prioritized, please negotiate with the user who owns the current schedule.</p>
+<p>Since we only have 1 GPU right now, we are holding off on using e.g. SLURM resource management software to manage our workstation. Instead of it, at this stage we consider a negotiated allocation to use our compute nodes. An easy way to do this is to book it directly in the DingTalk calendar! Before using the workstation you should organize your schedule ahead of time and add it to our DingTalk calendar, making sure not to cross over with other people's schedules. Please use computing nodes strictly according to the calendar schedule. If there are indeed urgent tasks that need to be prioritized, please negotiate with the user who owns the current schedule.</p>
 <h4 id="check-the-resources">Check the resources</h4>
 <p>Before running the program, check the GPU to ensure there are sufficient computing resources, input the following command.</p>
 <pre><code class="language-bash">$ nvidia-smi
@@ -584,13 +616,13 @@ conda install pandas
 <p>Start a background terminal session using <code>tmux</code>.Simply run <code>tmux</code>, you can get a new session. After run the job, press <code>Ctrl+B D</code> shortcut to detach the session. When you return, use <code>tmux ls</code> to see the session ID, then use <code>tmux a -t &lt;ID&gt;</code> to attach the session and continue the job.</p>
 <h4 id="matlab">MATLAB</h4>
 <p>All of the above assumes you are using the python; if you are a MATLAB user, please read the following carefully.</p>
-<p>We have already pre-installed the MATLAB (R2024a) in our cluster. Unfortunately, we are unable to share MATLAB licences within the cluster due to MATLAB's strict licensing requirements. And it's also not possible to sign in with multiple user accounts on the same server instance, whether it's a real or virtual server. This means that only one user is allowed to use MATLAB in our cluster at any given time, and if other users need to use it they need to queue up, so I recommend that you schedule a MATLAB appointment in our DingTalk calendar just like GPU before.</p>
-<p>I recommend using the MATLAB resources in our cluster only when you need to use the GPU to assist in computing MATLAB program, because in this way the occupancy time of MATLAB is consistent with the occupancy time of the GPU. For other tasks, you can do it on your own computer with CPU.</p>
+<p>We have already pre-installed the MATLAB (R2024a) in our workstation. Unfortunately, we are unable to share MATLAB licences within the workstation due to MATLAB's strict licensing requirements. And it's also not possible to sign in with multiple user accounts on the same server instance, whether it's a real or virtual server. This means that only one user is allowed to use MATLAB in our workstation at any given time, and if other users need to use it they need to queue up, so I recommend that you schedule a MATLAB appointment in our DingTalk calendar just like GPU before.</p>
+<p>I recommend using the MATLAB resources in our workstation only when you need to use the GPU to assist in computing MATLAB program, because in this way the occupancy time of MATLAB is consistent with the occupancy time of the GPU. For other tasks, you can do it on your own computer with CPU.</p>
 <p>Nevertheless, you can still use it without restriction by installing a separate MATLAB program in your own home dir. This assumes that you have a MATLAB licence and you can activate it with your own licence. </p>
 <p><strong>Instructions for using our pre-installed MATLAB:</strong></p>
 <p>Before using it you should get the username/password of our MATLAB user from the administrator, please note that this is a separate LINUX user which only used to run MATLAB. Please make sure to plan your time well and don’t take up too much time or conflict with others.</p>
 <p>Please note that if you need to install any third-party tools, please contact the administrator!</p>
-<p>Please also note that the pre-installed MATLAB in our cluster is tied to our administrator's licence. If you encounter MATLAB updates or verifications from time to time, please contact administrator for assistance.</p>
+<p>Please also note that the pre-installed MATLAB in our workstation is tied to our administrator's licence. If you encounter MATLAB updates or verifications from time to time, please contact administrator for assistance.</p>
 <p>We will give a running example of MATLAB below.</p>
 <h4 id="running-example-python">Running example (Python)</h4>
 <p>Here I will show you an example to run python programme.</p>
@@ -631,7 +663,7 @@ print(f&quot;GPU time consumption: {gpu_time:.6f} second&quot;)
 </code></pre>
 <ul>
 <li>
-<p>The first thing we need to do is to upload this python file to our GPU cluster, We've already covered how to upload files with XFtp earlier on.</p>
+<p>The first thing we need to do is to upload this python file to our GPU workstation, We've already covered how to upload files with XFtp earlier on.</p>
 </li>
 <li>
 <p>Supposed I have already uploaded the python file to my home path. Now we can check it.</p>
@@ -698,7 +730,7 @@ gpu_time = toc;
 fprintf(&quot;GPU time consumption: %.6f seconds\n&quot;, gpu_time);
 </code></pre>
 <ul>
-<li>Login to our cluster as a MATLAB user. You can switch to it by command <code>su matlab</code>. Then type the password got from our administrator.</li>
+<li>Login to our workstation as a MATLAB user. You can switch to it by command <code>su matlab</code>. Then type the password got from our administrator.</li>
 </ul>
 <p><img alt="" src="../img/Xshell10.png" /></p>
 <ul>
@@ -710,10 +742,10 @@ fprintf(&quot;GPU time consumption: %.6f seconds\n&quot;, gpu_time);
 </ul>
 <p><img alt="" src="../img/Xshell12.png" /></p>
 <p>Then we can see the resuls.</p>
-<p><strong>Now you should know how to run your programme in our cluster.</strong></p>
+<p><strong>Now you should know how to run your programme in our workstation.</strong></p>
 <h2 id="quick-reference">Quick Reference</h2>
 <h3 id="contact">Contact</h3>
-<p>The computing cluster and the storage server are managed by Yidu Wu (<a href="mailto:yiduwu@cuhk.edu.hk">yiduwu@cuhk.edu.hk</a>).</p>
+<p>The workstation and the storage server are managed by Yidu Wu (<a href="mailto:yiduwu@cuhk.edu.hk">yiduwu@cuhk.edu.hk</a>).</p>
 <h3 id="useful-links">Useful Links</h3>
 <ul>
 <li>CUHK VPN: <a href="https://www.itsc.cuhk.edu.hk/all-it/wifi-and-network/cuhk-vpn/">https://www.itsc.cuhk.edu.hk/all-it/wifi-and-network/cuhk-vpn/</a></li>
